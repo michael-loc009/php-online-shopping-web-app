@@ -1,0 +1,16 @@
+@startuml ShipperUseCase
+left to right direction
+actor "Shipper" as fc
+rectangle ShipperPage {
+  usecase "Register" as UC1
+  usecase "Login" as UC2
+  usecase "View Orders" as UC3
+  usecase "View Order Details" as UC4
+  usecase "Update Order Status" as UC5
+}
+fc --> UC1
+fc --> UC2
+fc --> UC3
+fc --> UC4
+fc --> UC5
+@enduml

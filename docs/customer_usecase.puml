@@ -1,0 +1,18 @@
+@startuml CustomerUseCase
+left to right direction
+actor "Customer" as fc
+rectangle CustomerPage {
+  usecase "Register" as UC1
+  usecase "Login" as UC2
+  usecase "Search Products by name/price" as UC3
+  usecase "View Product Details" as UC4
+  usecase "Add/Remove item in cart" as UC5
+  usecase "Checkout" as UC6
+}
+fc --> UC1
+fc --> UC2
+fc --> UC3
+fc --> UC4
+fc --> UC5
+fc --> UC6
+@enduml

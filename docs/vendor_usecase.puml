@@ -1,0 +1,16 @@
+@startuml VendorUseCase
+left to right direction
+actor "Vendor" as fc
+rectangle VendorPage {
+  usecase "Register" as UC1
+  usecase "Login" as UC2
+  usecase "View Products" as UC3
+  usecase "View Product Details" as UC4
+  usecase "Add/Update/Remove products" as UC5
+}
+fc --> UC1
+fc --> UC2
+fc --> UC3
+fc --> UC4
+fc --> UC5
+@enduml
