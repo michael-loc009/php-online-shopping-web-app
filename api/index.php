@@ -24,20 +24,15 @@ if (!strpos($uri, '/api')) {
     exit();
 }
 
-echo "happy";
-header("HTTP/1.1 404 Not Found");
 
+$requestMethod = $_SERVER["REQUEST_METHOD"];
 
-// $requestMethod = $_SERVER["REQUEST_METHOD"];
-
-// if (strpos($uri, "/orderStatus")){
-//     echo "happy";
-//     // $orderStatuscontroller = new OrderStatusController($shopDb, $requestMethod);
-//     // $orderStatuscontroller->processRequest();
-// } else{
-//     notFoundResponse();
-// }
-
+if (strpos($uri, "/orderStatus")){
+    $orderStatuscontroller = new OrderStatusController($shopDb, $requestMethod);
+    $orderStatuscontroller->processRequest();
+} else{
+    notFoundResponse();
+}
 
 
 ?>
