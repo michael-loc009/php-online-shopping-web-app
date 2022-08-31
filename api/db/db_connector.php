@@ -1,6 +1,6 @@
 <?php
 
-class DatabaseConnector extends SQLite3  {
+class DatabaseConnector  {
 
     private $accountConnection = null;
     private $shopConnection = null;
@@ -20,10 +20,9 @@ class DatabaseConnector extends SQLite3  {
     {
 
         try {
-            $this->accountConnection = $this->open("./accounts.db");
-
+            $this->accountConnection = new \PDO("sqlite:" ."./accounts.db");
             return $this->accountConnection;
-        } catch (Exception $e) {
+        } catch (\PDOException $e) {
             echo 'Database exception: ' . $e->getMessage();
             exit($e->getMessage());
         }
@@ -32,9 +31,9 @@ class DatabaseConnector extends SQLite3  {
     public function getShopDbConnection()
     {
         try {
-            $this->shopConnection = $this->open("./db/shop.db");
+            $this->shopConnection = new \PDO("sqlite:" ."./db/shop.db");
             return $this->shopConnection;
-        } catch (Exception $e) {
+        } catch (\PDOException $e) {
             echo 'Database exception: ' . $e->getMessage();
             exit($e->getMessage());
         }

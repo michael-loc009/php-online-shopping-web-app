@@ -15,11 +15,10 @@ class OrderStatus
         $query = "select * from OrderStatus";
 
         try {
-
             $result = $this->db->query($query);
-
             $orderStatusList = array();
-            while($row =  $result->fetchArray(SQLITE3_ASSOC) ) {
+
+            while($row =  $result->fetch(\PDO::FETCH_ASSOC) ) {
                 
                 $orderStatus = array(
                     "OrderStatusID" => $row["OrderStatusID"] ,
@@ -33,7 +32,7 @@ class OrderStatus
             echo 'Database exception: ' . $e->getMessage();
             exit($e->getMessage());
         } finally{
-            $db->close();
+            // $this->db->close();
         }
     }
 }

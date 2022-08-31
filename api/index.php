@@ -15,17 +15,14 @@ header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+$requestMethod = $_SERVER["REQUEST_METHOD"];
 
 // all of our endpoints start with /api
 // everything else results in a 404 Not Found
-if (!strpos($uri, '/api')) {
-    // echo "happy sad";
+if (strpos($uri, '/api') === false) {
     header("HTTP/1.1 404 Not Found");
     exit();
 }
-
-
-$requestMethod = $_SERVER["REQUEST_METHOD"];
 
 if (strpos($uri, "/orderStatus")){
     $orderStatuscontroller = new OrderStatusController($shopDb, $requestMethod);
