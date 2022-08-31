@@ -24,7 +24,7 @@ if (strpos($uri, '/api') === false) {
     exit();
 }
 
-if (strpos($uri, "/orderStatus")){
+if (strpos($uri, "/orderStatus") === true){
     $orderStatuscontroller = new OrderStatusController($shopDb, $requestMethod);
     $orderStatuscontroller->processRequest();
 } else{
