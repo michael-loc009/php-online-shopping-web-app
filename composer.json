@@ -1,6 +1,5 @@
 {
     "require": {
-        "ext-pdo_sqlite": "*",
         "php": ">=7.0.0"
    }
 }
