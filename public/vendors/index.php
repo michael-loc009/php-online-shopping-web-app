@@ -8,7 +8,9 @@
   </head>
   <body>
     <?php include "../template/headers/admin_header.php"; ?>
-    <h2>Hello</h2>  
+      <div class="container">
+        <h2>Add something here</h2>
+      </div>
     <?php include "../template/footers/admin_footer.php"; ?>  
 
     <script src="./js/bootstrap.bundle.min.js"></script>
