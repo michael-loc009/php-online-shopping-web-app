@@ -1,0 +1,354 @@
+{
+	"info": {
+		"_postman_id": "89b943f3-bac1-4d57-8647-fbbbf83bbe89",
+		"name": "PHP Online Shop API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10595575"
+	},
+	"item": [
+		{
+			"name": "Get Order Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/orderStatus",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"orderStatus"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Order Status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/orderStatus",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"orderStatus"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Sep 2022 03:18:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"OrderStatusID\": \"1\",\n        \"Label\": \"active\"\n    },\n    {\n        \"OrderStatusID\": \"2\",\n        \"Label\": \"delivered\"\n    },\n    {\n        \"OrderStatusID\": \"3\",\n        \"Label\": \"canceled\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Add Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Name",
+							"value": "test1",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "lalala",
+							"type": "text"
+						},
+						{
+							"key": "Price",
+							"value": "10.2",
+							"type": "text"
+						},
+						{
+							"key": "ProductPhoto",
+							"type": "file",
+							"src": "/C:/Users/DEEL/OneDrive/Documents/Assignment/Software Development/1988044-Nguyen_Dinh_Loc-QLNV-4/Dich_vu_Du_lieu/Media/NV_2.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/product",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Product",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Name",
+									"value": "test1",
+									"type": "text"
+								},
+								{
+									"key": "Description",
+									"value": "lalala",
+									"type": "text"
+								},
+								{
+									"key": "Price",
+									"value": "10.2",
+									"type": "text"
+								},
+								{
+									"key": "ProductPhoto",
+									"type": "file",
+									"src": "/C:/Users/DEEL/OneDrive/Documents/Assignment/Software Development/1988044-Nguyen_Dinh_Loc-QLNV-4/Dich_vu_Du_lieu/Media/NV_2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/product",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Sep 2022 05:16:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Products",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Name",
+							"value": "test1",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "lalala",
+							"type": "text"
+						},
+						{
+							"key": "Price",
+							"value": "10.2",
+							"type": "text"
+						},
+						{
+							"key": "ProductPhoto",
+							"type": "file",
+							"src": "/C:/Users/DEEL/OneDrive/Documents/Assignment/Software Development/1988044-Nguyen_Dinh_Loc-QLNV-4/Dich_vu_Du_lieu/Media/NV_2.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/product",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Products",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Name",
+									"value": "test1",
+									"type": "text"
+								},
+								{
+									"key": "Description",
+									"value": "lalala",
+									"type": "text"
+								},
+								{
+									"key": "Price",
+									"value": "10.2",
+									"type": "text"
+								},
+								{
+									"key": "ProductPhoto",
+									"type": "file",
+									"src": "/C:/Users/DEEL/OneDrive/Documents/Assignment/Software Development/1988044-Nguyen_Dinh_Loc-QLNV-4/Dich_vu_Du_lieu/Media/NV_2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/product",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Sep 2022 07:02:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"ProductID\": \"14\",\n        \"Name\": \"test1\",\n        \"ImagePath\": \"http://127.0.0.1/assets/products/test1/NV_2.png\",\n        \"UpdatedAt\": \"2022-09-01T06:53:57Z\",\n        \"CreatedAt\": \"2022-09-01T06:53:57Z\",\n        \"Price\": \"10.2\",\n        \"Description\": \"lalala\"\n    },\n    {\n        \"ProductID\": \"15\",\n        \"Name\": \"test2\",\n        \"ImagePath\": \"http://127.0.0.1/assets/products/test2/NV_2.png\",\n        \"UpdatedAt\": \"2022-09-01T06:56:22Z\",\n        \"CreatedAt\": \"2022-09-01T06:56:22Z\",\n        \"Price\": \"10.2\",\n        \"Description\": \"lalala\"\n    },\n    {\n        \"ProductID\": \"16\",\n        \"Name\": \"test\",\n        \"ImagePath\": \"http://127.0.0.1/assets/products/test/NV_2.png\",\n        \"UpdatedAt\": \"2022-09-01T07:01:44Z\",\n        \"CreatedAt\": \"2022-09-01T07:01:44Z\",\n        \"Price\": \"10.2\",\n        \"Description\": \"lalala\"\n    }\n]"
+				}
+			]
+		}
+	]
+}
