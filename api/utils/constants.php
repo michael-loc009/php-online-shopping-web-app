@@ -15,9 +15,13 @@ $INVALID_FILE_ERROR_CODE = 1;
 $LARGE_FILE_ERROR_CODE = 2;
 $INVALID_IMAGE_TYPE_ERROR_CODE = 3;
 $FAILED_UPLOADE_FILE_ERROR_CODE =4;
+$EXISTING_PRODUCT_NAME_ERROR_CODE = 5;
+$INVALID_PRICE = 6;
 
 $ERROR_RESPONSE = array();
 $ERROR_RESPONSE[$INVALID_FILE_ERROR_CODE] = "Uploaded File is not an image.";
 $ERROR_RESPONSE[$LARGE_FILE_ERROR_CODE] = "Sorry, uploaded file is too large.";
 $ERROR_RESPONSE[$INVALID_IMAGE_TYPE_ERROR_CODE] = "Sorry, only JPG, JPEG and PNG files are allowed.";
 $ERROR_RESPONSE[$FAILED_UPLOADE_FILE_ERROR_CODE] = "Sorry, there was an error uploading your file.";
+$ERROR_RESPONSE[$EXISTING_PRODUCT_NAME_ERROR_CODE] = "Sorry, this product name already exists.";
+$ERROR_RESPONSE[$INVALID_PRICE] = "Sorry, product price is invalid";
