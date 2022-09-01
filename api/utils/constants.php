@@ -1,7 +1,7 @@
 <?php
 
 $MAX_UPLOAD_FILE_SIZE = 500000;
-$TARGET_PRODUCT_PHOTO_DIR = "../public/assets/products/";
+$TARGET_PRODUCT_PHOTO_DIR = "./assets/products/";
 
 
 // Http Status Codes
