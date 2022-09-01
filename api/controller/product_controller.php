@@ -40,9 +40,9 @@ class ProductController
         $productName = $_POST["Name"];
         $price = floatval($_POST["Price"]);
         $description = $_POST["Description"];
-        $targetDir = $TARGET_PRODUCT_PHOTO_DIR.$productName."/";
+        $targetDir = ".".$TARGET_PRODUCT_PHOTO_DIR.$productName."/";
         $targetFile =  $targetDir.basename($uploadedProductPhoto["name"]);
-        $imagePath = $productName."/".basename($uploadedProductPhoto["name"]);
+        $imagePath =  "http://".$_SERVER['SERVER_NAME'].$TARGET_PRODUCT_PHOTO_DIR.$productName."/".basename($uploadedProductPhoto["name"]);
 
         $error = validateUploadedFile($uploadedProductPhoto,$targetFile);
         if ($error != ""){

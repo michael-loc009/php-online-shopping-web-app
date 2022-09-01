@@ -23,6 +23,10 @@ header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 $requestMethod = $_SERVER["REQUEST_METHOD"];
 
+if (strpos($uri, "/assets")){
+    return;
+}
+
 // all of our endpoints start with /api
 // everything else results in a 404 Not Found
 if (strpos($uri, '/api') === false) {
