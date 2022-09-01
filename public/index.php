@@ -9,5 +9,6 @@
   <body>
     <h1>Hello, world!</h1>
     <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="moment.js"></script>
   </body>
 </html>
