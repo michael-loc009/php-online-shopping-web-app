@@ -34,8 +34,10 @@ class OrderStatusController {
 
     private function getAllUsers()
     {
+        global $SUCCESS_STATUS_CODE;
+
         $result = $this->orderStatusModel->findAll();
-        $response['status_code_header'] = 'HTTP/1.1 200 OK';
+        $response['status_code_header'] = $SUCCESS_STATUS_CODE;
         $response['body'] = json_encode($result);
         return $response;
     }

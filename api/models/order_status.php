@@ -31,8 +31,6 @@ class OrderStatus
         } catch (Exception $e) {
             echo 'Database exception: ' . $e->getMessage();
             exit($e->getMessage());
-        } finally{
-            // $this->db->close();
-        }
+        } 
     }
 }

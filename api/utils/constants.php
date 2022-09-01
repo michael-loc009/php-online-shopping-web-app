@@ -1,0 +1,23 @@
+<?php
+
+$MAX_UPLOAD_FILE_SIZE = 500000;
+$TARGET_PRODUCT_PHOTO_DIR = "../public/assets/products/";
+
+
+// Http Status Codes
+$SUCCESS_STATUS_CODE = "HTTP/1.1 200 OK";
+$CREATED_STATUS_CODE = "HTTP/1.1 201 Created";
+$BAD_REQUEST_STATUS_CODE = "HTTP/1.1 400 Bad Request";
+$NOT_FOUND_STATUS_CODE = "HTTP/1.1 404 Not Found";
+
+// Error codes
+$INVALID_FILE_ERROR_CODE = 1;
+$LARGE_FILE_ERROR_CODE = 2;
+$INVALID_IMAGE_TYPE_ERROR_CODE = 3;
+$FAILED_UPLOADE_FILE_ERROR_CODE =4;
+
+$ERROR_RESPONSE = array();
+$ERROR_RESPONSE[$INVALID_FILE_ERROR_CODE] = "Uploaded File is not an image.";
+$ERROR_RESPONSE[$LARGE_FILE_ERROR_CODE] = "Sorry, uploaded file is too large.";
+$ERROR_RESPONSE[$INVALID_IMAGE_TYPE_ERROR_CODE] = "Sorry, only JPG, JPEG and PNG files are allowed.";
+$ERROR_RESPONSE[$FAILED_UPLOADE_FILE_ERROR_CODE] = "Sorry, there was an error uploading your file.";
