@@ -1,6 +1,6 @@
 <?php
 
-class OrderStatus
+class DistributionHub
 {
 
     private $db = null;
@@ -12,7 +12,7 @@ class OrderStatus
 
     public function findAll()
     {
-        $query = "select * from OrderStatus";
+        $query = "select * from DistributionHub";
 
         try {
             $result = $this->db->query($query);
@@ -21,8 +21,9 @@ class OrderStatus
             while($row =  $result->fetch(\PDO::FETCH_ASSOC) ) {
                 
                 $orderStatus = array(
-                    "OrderStatusID" => (int) $row["OrderStatusID"] ,
-                    "Label" => $row["Label"],
+                    "DistributionHubID" => (int) $row["DistributionHubID"] ,
+                    "Name" => $row["Name"],
+                    "Address" => $row["Address"],
                 );
                 $orderStatusList[] = $orderStatus;
              }

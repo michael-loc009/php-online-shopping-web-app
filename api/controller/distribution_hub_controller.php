@@ -1,25 +1,25 @@
 <?php
 
 
-class OrderStatusController {
+class DistributionHubController {
 
     private $db;
     private $requestMethod;
-    private $orderStatusModel;
+    private $distributionHubModel;
 
     public function __construct($db, $requestMethod)
     {
         $this->db = $db;
         $this->requestMethod = $requestMethod;
 
-        $this->orderStatusModel = new OrderStatus($db);
+        $this->distributionHubModel = new DistributionHub($db);
     }
 
     public function processRequest()
     {
         switch ($this->requestMethod) {
             case 'GET':
-                $response = $this->getOrderStatuses();
+                $response = $this->getDistributionHubs();
                 break;
             default:
                 $response = notFoundResponse();
@@ -32,11 +32,11 @@ class OrderStatusController {
         }
     }
 
-    private function getOrderStatuses()
+    private function getDistributionHubs()
     {
         global $SUCCESS_STATUS_CODE;
 
-        $result = $this->orderStatusModel->findAll();
+        $result = $this->distributionHubModel->findAll();
         $response['status_code_header'] = $SUCCESS_STATUS_CODE;
         $response['body'] = json_encode($result);
         return $response;

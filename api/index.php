@@ -7,11 +7,13 @@ include_once "./utils/validators.php";
 include_once "./utils/files.php";
 
 include_once "./models/order_status.php";
+include_once "./models/distribution_hub.php";
 include_once "./models/product.php";
 include_once "./models/customer.php";
 include_once "./models/vendor.php";
 
 include_once "./controller/order_status_controller.php";
+include_once "./controller/distribution_hub_controller.php";
 include_once "./controller/product_controller.php";
 include_once "./controller/customer_controller.php";
 include_once "./controller/vendor_controller.php";
@@ -45,6 +47,9 @@ if (strpos($uri, '/api') === false) {
 if (strpos($uri, "/orderStatus")) {
     $orderStatuscontroller = new OrderStatusController($shopDb, $requestMethod);
     $orderStatuscontroller->processRequest();
+}else if (strpos($uri, "/distributionHub")) {
+    $distributionHubcontroller = new DistributionHubController($shopDb, $requestMethod);
+    $distributionHubcontroller->processRequest();
 } else if (strpos($uri, "/product")) {
     $productcontroller = new ProductController($shopDb, $requestMethod);
     $productcontroller->processRequest();
