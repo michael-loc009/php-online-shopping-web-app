@@ -1,6 +1,6 @@
 <?php
 
-class Product
+class Customer
 {
 
     private $db = null;
@@ -12,93 +12,94 @@ class Product
 
 
     public function findAll(){
-        $query = "SELECT * FROM PRODUCT";
+        $query = "SELECT * FROM Customer";
 
         try {
             $result = $this->db->query($query);
-            $productList = array();
+            $customerList = array();
 
             while($row =  $result->fetch(\PDO::FETCH_ASSOC) ) {
                 
-                $product = array(
-                    "ProductID" => (int) $row["ProductID"] ,
+                $customer = array(
+                    "CustomerID" => (int) $row["CustomerID"] ,
+                    "Username" => $row["Username"],
                     "Name" => $row["Name"],
-                    "ImagePath" => $row["ImagePath"],
+                    "ProfilePhoto" => $row["ProfilePhoto"],
                     "UpdatedAt" => $row["UpdatedAt"],
                     "CreatedAt" => $row["CreatedAt"],
-                    "Price" => (float) $row["Price"],
-                    "Description" => $row["Description"],
+                    "Address" => $row["Address"]
                 );
-                $productList[] = $product;
+                $customerList[] = $customer;
              }
 
-            return $productList;
+            return $customerList;
         } catch (Exception $e) {
             echo 'Database exception: ' . $e->getMessage();
             exit($e->getMessage());
         } 
     }
 
-    public function findByName($productName){
-        $query = "SELECT * FROM PRODUCT WHERE Name = :Name";
+    public function findByUsername($username){
+        $query = "SELECT * FROM Customer WHERE Username = :Username";
 
         try {
             $stmt = $this->db->prepare($query);
-            $stmt->execute([":Name" => $productName]);
+            $stmt->execute([":Username" => $username]);
 
-            $product = array();
+            $customer = array();
 
             while($row =  $stmt->fetch(\PDO::FETCH_ASSOC) ) {
                 
-                $product = array(
-                    "Name" => $row["Name"],
+                $customer = array(
+                    "Username" => $row["Username"],
                 );
              }
 
-            return $product;
+            return $customer;
         } catch (Exception $e) {
             echo 'Database exception: ' . $e->getMessage();
             exit($e->getMessage());
         } 
     }
 
-    public function findByProductID($productName){
-        $query = "SELECT * FROM PRODUCT WHERE ProductID = :ProductID";
+    public function findByCustomerID($customerID){
+        $query = "SELECT * FROM Customer WHERE CustomerID = :CustomerID";
 
         try {
             $stmt = $this->db->prepare($query);
-            $stmt->execute([":ProductID" => $productName]);
+            $stmt->execute([":CustomerID" => $customerID]);
 
-            $product = array();
+            $customer = array();
 
             while($row =  $stmt->fetch(\PDO::FETCH_ASSOC) ) {
                 
-                $product = array(
-                    "ProductID" => $row["ProductID"],
+                $customer = array(
+                    "CustomerID" => $row["CustomerID"],
                 );
              }
 
-            return $product;
+            return $customer;
         } catch (Exception $e) {
             echo 'Database exception: ' . $e->getMessage();
             exit($e->getMessage());
         } 
     }
 
-    public function create($name,$imagePath,$price,$description)
+    public function create($username,$password,$name,$profilePhoto,$address)
     {
         $currentDateTime = gmdate("Y-m-d\TH:i:s\Z");
 
-        $query = "INSERT INTO Product(Name,ImagePath,UpdatedAt,CreatedAt,Price,Description) VALUES(:Name,:ImagePath,:UpdatedAt,:CreatedAt,:Price,:Description)";
+        $query = "INSERT INTO Customer(Username,Password,ProfilePhoto,Name,Address,CreatedAt,UpdatedAt) VALUES(:Username,:Password,:ProfilePhoto,:Name,:Address,:CreatedAt,:UpdatedAt)";
 
         try {
             $stmt = $this->db->prepare($query);
+            $stmt->bindValue(":Username", $username);
+            $stmt->bindValue(":Password", $password);
             $stmt->bindValue(":Name", $name);
-            $stmt->bindValue(":ImagePath", $imagePath);
             $stmt->bindValue(":UpdatedAt", $currentDateTime);
             $stmt->bindValue(":CreatedAt", $currentDateTime);
-            $stmt->bindValue(":Price", $price);
-            $stmt->bindValue(":Description", $description);
+            $stmt->bindValue(":Address", $address);
+            $stmt->bindValue(":ProfilePhoto", $profilePhoto);
             $stmt->execute();
     
             return true;
@@ -108,12 +109,12 @@ class Product
         } 
     }
 
-    public function delete($productID){
-        $query = "DELETE FROM Product WHERE ProductID = :ProductID";
+    public function delete($customerID){
+        $query = "DELETE FROM Customer WHERE CustomerID = :CustomerID";
 
         try {
             $stmt = $this->db->prepare($query);
-            $stmt->bindValue(":ProductID", $productID);
+            $stmt->bindValue(":CustomerID", $customerID);
             $stmt->execute();
     
             return true;

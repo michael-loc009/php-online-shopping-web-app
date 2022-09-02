@@ -20,7 +20,7 @@ class DatabaseConnector  {
     {
 
         try {
-            $this->accountConnection = new \PDO("sqlite:" ."./accounts.db");
+            $this->accountConnection = new \PDO("sqlite:" ."./db/accounts.db");
             return $this->accountConnection;
         } catch (\PDOException $e) {
             echo 'Database exception: ' . $e->getMessage();

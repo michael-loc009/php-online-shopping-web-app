@@ -2,7 +2,7 @@
 
 function saveUploadedFile($file, $targetDir)
 {
-    global $FAILED_UPLOADE_FILE_ERROR_CODE;
+    global $FAILED_UPLOADED_FILE_ERROR_CODE;
 
     $targetFile = $targetDir . basename($file["name"]);
     
@@ -21,5 +21,5 @@ function saveUploadedFile($file, $targetDir)
         return "";
     }
 
-    return errorResponse($FAILED_UPLOADE_FILE_ERROR_CODE);
+    return errorResponse($FAILED_UPLOADED_FILE_ERROR_CODE);
 }

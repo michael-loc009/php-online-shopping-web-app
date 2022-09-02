@@ -24,6 +24,9 @@ class ProductController
             case 'GET';
                 $response = $this->getProducts();
                 break;
+            case 'DELETE';
+                $response = $this->deleteProduct();
+                break;
             default:
                 $response = notFoundResponse();
                 break;
@@ -39,13 +42,11 @@ class ProductController
     {
         global $BAD_REQUEST_STATUS_CODE, $TARGET_PRODUCT_PHOTO_DIR, $CREATED_STATUS_CODE;
 
-        $uploadedProductPhoto = $_FILES["ProductPhoto"];
         $productName = $_POST["Name"];
         $price = floatval($_POST["Price"]);
         $description = $_POST["Description"];
         $targetDir = ".".$TARGET_PRODUCT_PHOTO_DIR.$productName."/";
-        $targetFile =  $targetDir.basename($uploadedProductPhoto["name"]);
-        $imagePath =  "http://".$_SERVER['SERVER_NAME'].$TARGET_PRODUCT_PHOTO_DIR.$productName."/".basename($uploadedProductPhoto["name"]);
+       
 
         $error = $this->validateCreateProductInputs($productName, $price);
         if ($error != ""){
@@ -54,12 +55,16 @@ class ProductController
             return $response;
         }
 
-        $error = validateUploadedFile($uploadedProductPhoto,$targetFile);
+        $error = validateUploadedFile($targetDir, "ProductPhoto");
         if ($error != ""){
             $response['status_code_header'] = $BAD_REQUEST_STATUS_CODE;
             $response['body'] = json_encode($error);
             return $response;
         }
+
+        $uploadedProductPhoto = $_FILES["ProductPhoto"];
+        $targetFile =  $targetDir.basename($uploadedProductPhoto["name"]);
+        $imagePath =  "http://".$_SERVER['SERVER_NAME'].$TARGET_PRODUCT_PHOTO_DIR.$productName."/".basename($uploadedProductPhoto["name"]);
 
         $error = saveUploadedFile($uploadedProductPhoto,$targetDir);
         if ($error != ""){
@@ -84,18 +89,50 @@ class ProductController
         return $response;
     }
 
+    private function deleteProduct(){
+        global $BAD_REQUEST_STATUS_CODE, $SUCCESS_STATUS_CODE;
+        $input = json_decode(file_get_contents('php://input'), TRUE);
+
+        $error = $this-> validateProductID($input);
+        if ($error != ""){
+            $response['status_code_header'] = $BAD_REQUEST_STATUS_CODE;
+            $response['body'] = json_encode($error);
+            return $response;
+        }
+
+        $result = $this->productModel->delete($input["ProductID"]);
+        $response['status_code_header'] = $SUCCESS_STATUS_CODE;
+        $response['body'] = json_encode(defaultSuccessResponse());
+        return $response;
+    }
+
     private function validateCreateProductInputs($productName,$price){
-        global $INVALID_PRICE, $EXISTING_PRODUCT_NAME_ERROR_CODE;
+        global $INVALID_PRICE_ERROR_CODE, $EXISTING_PRODUCT_NAME_ERROR_CODE;
         $result = $this->productModel->findByName($productName);
         if (isset( $result["Name"])){
             return errorResponse($EXISTING_PRODUCT_NAME_ERROR_CODE);
         }
 
         if ($price <=0){
-            return errorResponse($INVALID_PRICE);
+            return errorResponse($INVALID_PRICE_ERROR_CODE);
         }
 
         return "";
 
+    }
+
+    private function validateProductID($productID){
+        global $NON_EXISTING_PRODUCT_ERROR_CODE;
+
+        if (!isset($productID["ProductID"])){
+            return errorResponse($NON_EXISTING_PRODUCT_ERROR_CODE);
+        }
+
+        $result = $this->productModel->findByProductID($productID["ProductID"]);
+        if (!isset( $result["ProductID"])){
+            return errorResponse($NON_EXISTING_PRODUCT_ERROR_CODE);
+        }
+
+        return "";
     }
 }
