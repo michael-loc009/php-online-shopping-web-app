@@ -4,6 +4,7 @@ $MAX_UPLOAD_FILE_SIZE = 500000;
 $TARGET_PRODUCT_PHOTO_DIR = "/assets/products/";
 $TARGET_CUSTOMER_PHOTO_DIR = "/assets/customers/";
 $TARGET_VENDOR_PHOTO_DIR = "/assets/vendors/";
+$TARGET_SHIPPER_PHOTO_DIR = "/assets/shippers/";
 $DEFAULT_AVATAR_PROFILE_PHOTO = "default_avatar.jpg";
 
 
@@ -36,6 +37,9 @@ $EXISTING_BUSINESS_NAME_ERROR_CODE = 17;
 $EXISTING_BUSINESS_ADDRESS_ERROR_CODE = 18;
 $NON_EXISTING_VENDOR_ERROR_CODE = 19;
 
+$NON_EXISTING_DISTRIBUTION_HUB_ERROR_CODE = 20;
+$NON_EXISTING_SHIPPER_ERROR_CODE = 21;
+
 $ERROR_RESPONSE = array();
 $ERROR_RESPONSE[$INVALID_FILE_ERROR_CODE] = "Sorry, uploaded file is not an image.";
 $ERROR_RESPONSE[$LARGE_FILE_ERROR_CODE] = "Sorry, uploaded file is too large.";
@@ -56,3 +60,5 @@ $ERROR_RESPONSE[$INVALID_DESCRIPTION_ERROR_CODE] = "Sorry, product description c
 $ERROR_RESPONSE[$EXISTING_BUSINESS_NAME_ERROR_CODE] = "Sorry, business name already exists.";
 $ERROR_RESPONSE[$EXISTING_BUSINESS_ADDRESS_ERROR_CODE] = "Sorry, business address already exists.";
 $ERROR_RESPONSE[$NON_EXISTING_VENDOR_ERROR_CODE] = "Sorry, vendor does not exist.";
+$ERROR_RESPONSE[$NON_EXISTING_DISTRIBUTION_HUB_ERROR_CODE] = "Sorry, distribution hub does not exist.";
+$ERROR_RESPONSE[$NON_EXISTING_SHIPPER_ERROR_CODE] = "Sorry, shipper does not exist.";

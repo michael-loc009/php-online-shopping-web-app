@@ -34,4 +34,27 @@ class DistributionHub
             exit($e->getMessage());
         } 
     }
+
+    public function findByDistributionHubID($distributionHubID){
+        $query = "SELECT * FROM DistributionHub WHERE DistributionHubID = :DistributionHubID";
+
+        try {
+            $stmt = $this->db->prepare($query);
+            $stmt->execute([":DistributionHubID" => $distributionHubID]);
+
+            $distributionHub = array();
+
+            while($row =  $stmt->fetch(\PDO::FETCH_ASSOC) ) {
+                
+                $distributionHub = array(
+                    "DistributionHubID" => $row["DistributionHubID"],
+                );
+             }
+
+            return $distributionHub;
+        } catch (Exception $e) {
+            echo 'Database exception: ' . $e->getMessage();
+            exit($e->getMessage());
+        } 
+    }
 }

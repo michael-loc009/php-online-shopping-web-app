@@ -11,12 +11,14 @@ include_once "./models/distribution_hub.php";
 include_once "./models/product.php";
 include_once "./models/customer.php";
 include_once "./models/vendor.php";
+include_once "./models/shipper.php";
 
 include_once "./controller/order_status_controller.php";
 include_once "./controller/distribution_hub_controller.php";
 include_once "./controller/product_controller.php";
 include_once "./controller/customer_controller.php";
 include_once "./controller/vendor_controller.php";
+include_once "./controller/shipper_controller.php";
 
 include_once "./db/db_connector.php";
 
@@ -59,6 +61,9 @@ if (strpos($uri, "/orderStatus")) {
 } else if (strpos($uri, "/vendor")){
     $vendorcontroller = new VendorController($accountDb, $requestMethod);
     $vendorcontroller->processRequest();
+}else if (strpos($uri, "/shipper")){
+    $shippercontroller = new ShipperController($accountDb,$shopDb,$requestMethod);
+    $shippercontroller->processRequest();
 } else {
     notFoundResponse();
 }
