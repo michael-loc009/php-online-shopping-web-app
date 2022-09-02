@@ -11,7 +11,7 @@
       <?php include "../template/headers/admin_header.php"; ?>
       <div class="container">
          <!-- Tabs -->
-         <ul class="nav nav-pills">
+         <ul class="nav nav-pills mb-5">
             <li class="nav-item " >
                <a onclick="openSection(event, 'products')"  class="nav-link tablinks active" href="#">Products</a>
             </li>

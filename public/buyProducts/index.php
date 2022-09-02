@@ -5,10 +5,11 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Vendor</title>
       <link href="../css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../css/vendors.css">
+      <link rel="stylesheet" href="../css/buyProducts.css">
    </head>
    <body>
       <?php include "../template/headers/admin_header.php"; ?>
+      
       <div class="container">
          <!-- Section -->
          <div id="products">
@@ -32,28 +33,18 @@
                </nav>
             </div>
          </div>
-          <!-- Modal -->
-  <div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-    
-      <!-- Modal content-->
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Modal Header</h4>
-        </div>
-        <div class="modal-body">
-          <p>Some text in the modal.</p>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        </div>
       </div>
-      
-    </div>
-  </div>
-      </div>
-      
+      <!-- The Modal -->
+<div id="myModal" class="modal">
+
+<!-- Modal content -->
+<div class="modal-content">
+  <span onclick="onCloseProductDetailsModal()" class="close">&times;</span>
+  <div id="modal-body"></div>
+</div>
+
+</div>
+   
       <?php include "../template/footers/admin_footer.php"; ?>  
       <script src="../js/bootstrap.bundle.min.js"></script>
       <script src="../js/buyProducts.js"></script>
