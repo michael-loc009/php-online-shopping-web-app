@@ -10,17 +10,8 @@
    <body>
       <?php include "../template/headers/admin_header.php"; ?>
       <div class="container">
-         <!-- Tabs -->
-         <ul class="nav nav-pills">
-            <li class="nav-item " >
-               <a onclick="openSection(event, 'products')"  class="nav-link tablinks active" href="#">Products</a>
-            </li>
-            <li class="nav-item ">
-               <a  onclick="openSection(event, 'create-products')" class="nav-link tablinks" href="#">Add new product</a>
-            </li>
-         </ul>
          <!-- Section -->
-         <div id="products" class="tabcontent" >
+         <div id="products">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                <div class="container-fluid">
                   <form class="d-flex">
@@ -41,13 +32,30 @@
                </nav>
             </div>
          </div>
-         <div id="create-products" class="tabcontent">
-          <p>Create Product<p>
-         </div>
+          <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+          <p>Some text in the modal.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div>
+      
+    </div>
+  </div>
+      </div>
+      
       <?php include "../template/footers/admin_footer.php"; ?>  
       <script src="../js/bootstrap.bundle.min.js"></script>
-      <script src="../const/apiServices.js"></script> 
-      <script src="../js/vendors.js"></script>
+      <script src="../js/buyProducts.js"></script>
    </body>
 </html>

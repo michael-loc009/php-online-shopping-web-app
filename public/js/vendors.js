@@ -136,7 +136,7 @@ function numPages() {
 function renderList(list) {
   console.log({ list });
   let html = list.map(renderItem).join("");
-  document.getElementById("products").innerHTML = html;
+  document.getElementById("vendorsList").innerHTML = html;
 }
 
 async function index() {
