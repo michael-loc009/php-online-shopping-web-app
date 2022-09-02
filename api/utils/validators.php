@@ -43,7 +43,7 @@ function validateUsername($username){
 
 function validatePassword($password){
     global $INVALID_PASSWORD_ERROR_CODE;
-    if (preg_match("/^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,20}$/", $password) != true){
+    if (preg_match("/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*#?&])[A-Za-z\d@$!%*#?&]{8,20}$/", $password) != true){
         return errorResponse($INVALID_PASSWORD_ERROR_CODE);
     }
 

@@ -107,18 +107,30 @@ class ProductController
     }
 
     private function validateCreateProductInputs($productName,$price){
-        global $INVALID_PRICE_ERROR_CODE, $EXISTING_PRODUCT_NAME_ERROR_CODE;
+        global $MISSING_REQUIRED_INPUTS_ERROR_CODE,$INVALID_PRICE_ERROR_CODE, $EXISTING_PRODUCT_NAME_ERROR_CODE,$INVALID_PRODUCT_NAME_ERROR_CODE,$INVALID_DESCRIPTION_ERROR_CODE;
+
+        if (!isset($_POST["Price"]) || !isset($_POST["Name"])){
+            return errorResponse($MISSING_REQUIRED_INPUTS_ERROR_CODE);
+        }
+
+        if (strlen($productName) <10 ||strlen($productName)>20){
+            return errorResponse($INVALID_PRODUCT_NAME_ERROR_CODE);
+        }
+
+        if (isset($_POST["Description"]) || strlen($_POST["Description"]) >500){
+            return errorResponse($INVALID_DESCRIPTION_ERROR_CODE);
+        }
+        
+        if ($price <=0){
+            return errorResponse($INVALID_PRICE_ERROR_CODE);
+        }
+
         $result = $this->productModel->findByName($productName);
         if (isset( $result["Name"])){
             return errorResponse($EXISTING_PRODUCT_NAME_ERROR_CODE);
         }
 
-        if ($price <=0){
-            return errorResponse($INVALID_PRICE_ERROR_CODE);
-        }
-
         return "";
-
     }
 
     private function validateProductID($productID){

@@ -9,10 +9,13 @@ include_once "./utils/files.php";
 include_once "./models/order_status.php";
 include_once "./models/product.php";
 include_once "./models/customer.php";
+include_once "./models/vendor.php";
 
 include_once "./controller/order_status_controller.php";
 include_once "./controller/product_controller.php";
 include_once "./controller/customer_controller.php";
+include_once "./controller/vendor_controller.php";
+
 include_once "./db/db_connector.php";
 
 $shopDb = (new DatabaseConnector())->getShopDbConnection();
@@ -48,6 +51,9 @@ if (strpos($uri, "/orderStatus")) {
 } else if (strpos($uri, "/customer")) {
     $customercontroller = new CustomerController($accountDb, $requestMethod);
     $customercontroller->processRequest();
+} else if (strpos($uri, "/vendor")){
+    $vendorcontroller = new VendorController($accountDb, $requestMethod);
+    $vendorcontroller->processRequest();
 } else {
     notFoundResponse();
 }
