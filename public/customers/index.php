@@ -5,7 +5,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Vendor</title>
       <link href="../css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../css/buyProducts.css">
+      <link rel="stylesheet" href="../css/customers.css">
    </head>
    <body>
       <?php include "../template/headers/admin_header.php"; ?>
@@ -47,6 +47,6 @@
    
       <?php include "../template/footers/admin_footer.php"; ?>  
       <script src="../js/bootstrap.bundle.min.js"></script>
-      <script src="../js/buyProducts.js"></script>
+      <script src="../js/customers.js"></script>
    </body>
 </html>

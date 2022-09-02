@@ -114,8 +114,13 @@ function renderItem(item, index) {
 }
 
 function renderList(list) {
-  console.log({ list });
-  let html = list.map(renderItem).join("");
+  let html;
+  if (list.length === 0) {
+    // if list is empty
+    html = "<h3>There is no products. Please add more !</h3>";
+  } else {
+    html = list.map(renderItem).join("");
+  }
   document.getElementById("vendorsList").innerHTML = html;
 }
 
