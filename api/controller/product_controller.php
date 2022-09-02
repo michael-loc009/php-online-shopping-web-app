@@ -117,7 +117,7 @@ class ProductController
             return errorResponse($INVALID_PRODUCT_NAME_ERROR_CODE);
         }
 
-        if (isset($_POST["Description"]) || strlen($_POST["Description"]) >500){
+        if (isset($_POST["Description"]) && strlen($_POST["Description"]) >500){
             return errorResponse($INVALID_DESCRIPTION_ERROR_CODE);
         }
         
