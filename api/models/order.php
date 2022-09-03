@@ -129,7 +129,7 @@ class Order
 
     public function updateOrderStatus($orderID,$orderStatus)
     {
-        $query = "Update 'Order' SET 'Status' = :OrderStatus WHERE 'OrderID' = :OrderID";
+        $query = "Update 'Order' SET Status = :OrderStatus WHERE OrderID = :OrderID";
 
         try {
             $stmt = $this->db->prepare($query);

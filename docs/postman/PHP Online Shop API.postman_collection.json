@@ -1753,6 +1753,103 @@
 					"body": "{\n    \"status\": true\n}"
 				}
 			]
+		},
+		{
+			"name": "Update Order Status",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"OrderID\": 6,\r\n    \"OrderStatusID\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/order",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Order Status",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"OrderID\": 6,\r\n    \"OrderStatusID\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/order",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 03 Sep 2022 09:45:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true\n}"
+				}
+			]
 		}
 	]
 }
