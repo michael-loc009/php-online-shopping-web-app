@@ -41,6 +41,11 @@ if (strpos($uri, "/assets")) {
     return;
 }
 
+if (strpos($uri, '/db')) {
+    header($NOT_FOUND_STATUS_CODE);
+    exit();
+}
+
 // all of our endpoints start with /api
 // everything else results in a 404 Not Found
 if (strpos($uri, '/api') === false) {
