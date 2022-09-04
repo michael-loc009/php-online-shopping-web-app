@@ -168,6 +168,42 @@ function renderCartQuantity(list) {
   document.getElementById("cart-quantity").innerHTML = html;
 }
 
+function resultBySearchString(list, searchString) {
+  return list.filter((vendor) =>
+    vendor.Name.toLowerCase().includes(searchString.toLowerCase())
+  );
+}
+
+function resultByPrice(list, min, max) {
+  let result;
+  result = list.filter(
+    (vendor) => parseFloat(vendor.Price) >= parseFloat(min)
+    // &&
+    // max &&
+    // parseFloat(vendor.Price) <= parseFloat(max)
+  );
+  if (max) {
+    result = result.filter(
+      (vendor) => parseFloat(vendor.Price) <= parseFloat(max)
+    );
+  }
+  return result;
+}
+
+function searchVendors(e) {
+  console.log(vendors.length);
+  e.preventDefault();
+  const searchString = document.getElementById("search-input").value;
+  let minPrice = document.getElementById("minPrice-input").value;
+  let maxPrice = document.getElementById("maxPrice-input").value;
+  if (minPrice === "") {
+    minPrice = 0;
+  }
+  let result = resultBySearchString(vendors, searchString);
+  result = resultByPrice(result, minPrice, maxPrice !== "" && maxPrice);
+  renderList(result);
+}
+
 async function index() {
   try {
     const onSuccess = (response) => {
