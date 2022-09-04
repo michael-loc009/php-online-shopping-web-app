@@ -42,7 +42,6 @@
             </div>
          </div>
          <div id="create-products" class="tabcontent">
-          <p>Create Product<p>
          </div>
       </div>
       <?php include "../template/footers/admin_footer.php"; ?>  

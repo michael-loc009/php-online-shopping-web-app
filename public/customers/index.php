@@ -5,19 +5,24 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Customer</title>
       <link href="../css/bootstrap.min.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
       <link rel="stylesheet" href="../css/customers.css">
+      <script src="https://kit.fontawesome.com/a8c4c24db6.js" crossorigin="anonymous"></script>
    </head>
    <body>
       <?php include "../template/headers/admin_header.php"; ?>
-      
       <div class="container">
          <!-- Section -->
          <div id="products">
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                <div class="container-fluid">
-                  <form class="d-flex">
-                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                     <button class="btn btn-outline-success" type="submit">Search</button>
+                  <form class="d-flex justify-content-between">
+                     <div class="d-flex">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control me-2" type="search" placeholder="Min Price" aria-label="MinPrice">
+                        <input class="form-control me-2" type="search" placeholder="Max Price" aria-label="MaxPrice">
+                     </div>
+                     <button class="btn btn-outline-success" type="submit">Filter</button>
                   </form>
                </div>
             </nav>
@@ -34,17 +39,15 @@
             </div>
          </div>
       </div>
-      <!-- The Modal -->
-<div id="myModal" class="modal">
-
-<!-- Modal content -->
-<div class="modal-content">
-  <span onclick="onCloseProductDetailsModal()" class="close">&times;</span>
-  <div id="modal-body"></div>
-</div>
-
-</div>
-   
+      <!-- Modal Product Details -->
+      <div id="productDetailsModal" class="modal">
+         <!-- Modal content -->
+         <div class="modal-content">
+            <span onclick="onCloseProductDetailsModal()" class="close">&times;</span>
+            <div id="modal-body"></div>
+         </div>
+      </div>
+     
       <?php include "../template/footers/admin_footer.php"; ?>  
       <script src="../js/bootstrap.bundle.min.js"></script>
       <script src="../js/customers.js"></script>
