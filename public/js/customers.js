@@ -69,7 +69,7 @@ function renderItemDetails(item) {
               </div>
               <p class="about">${Description}</p>
              
-              <div class="cart mt-4 align-items-center"> <button class="btn btn-success text-uppercase mr-2 px-4">Add to cart</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
+              <div class="cart mt-4 align-items-center"> <button onclick="addToCart(${ProductID})" class="btn btn-success text-uppercase mr-2 px-4">Add to cart</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
           </div>
       </div>
   </div>
@@ -89,7 +89,7 @@ function openProductDetails(id) {
     // When the user clicks the button, open the modal
     modal.style.display = "block";
     const html = renderItemDetails(item);
-    document.getElementById("modal-body").innerHTML = html;
+    document.getElementById("modal-details-body").innerHTML = html;
 
     // When the user clicks anywhere outside of the modal, close it
     window.onclick = function (event) {

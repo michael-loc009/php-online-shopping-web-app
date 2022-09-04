@@ -44,7 +44,7 @@
          <!-- Modal content -->
          <div class="modal-content">
             <span onclick="onCloseProductDetailsModal()" class="close">&times;</span>
-            <div id="modal-body"></div>
+            <div id="modal-details-body"></div>
          </div>
       </div>
      
