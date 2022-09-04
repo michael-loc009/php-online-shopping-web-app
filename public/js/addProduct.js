@@ -1,5 +1,3 @@
-const host = "https://php-online-shopping-backend.herokuapp.com/api/";
-
 function createCORSRequest(method, url) {
   var xhr = new XMLHttpRequest();
   if ("withCredentials" in xhr) {
@@ -13,13 +11,13 @@ function createCORSRequest(method, url) {
   return xhr;
 }
 
-function validation(e) {
+function _addProduct(e) {
+  const host = "https://php-online-shopping-backend.herokuapp.com/api/";
+
   let name = document.getElementById("inputName").value;
   let price = document.getElementById("inputPrice").value;
   let desc = document.getElementById("inputDescription").value;
   let file = document.getElementById("inputGetFile");
-  //   var file = document.querySelector("input[type=file]")[0].files[0];
-  //   console.log(file);
   let status = true;
   if (name) {
     name = name.trim();
@@ -79,14 +77,20 @@ function validation(e) {
         };
       }
       xhr.onreadystatechange = function (e) {
+        console.log(this.readyState);
         if (4 == this.readyState) {
           console.log(["xhr upload complete----", this.responseText]);
+          const res = JSON.parse(this.responseText);
+          if (res.code === 5) {
+            document.getElementById("error").innerHTML = res.message;
+          }
+          if (res.status) {
+            document.getElementById("error").innerHTML = "";
+            alert("Create success");
+          }
         }
       };
       xhr.open("POST", `${host}product`, true);
-    //   xhr.setRequestHeader("Content-Type", "multipart/form-data");
-
-      console.log(name, price, desc);
       var formData = new FormData();
       formData.append("Name", name);
       formData.append("Price", price);
@@ -95,8 +99,7 @@ function validation(e) {
       xhr.send(formData);
       console.log(formData);
     } catch (error) {
-      console.log(error);
+      console.log(error.message);
     }
   }
-  //   e.preventDefault();
 }

@@ -1,6 +1,7 @@
 <div class="container">
   <div class="container border px-3 py-3">
-    <p class="h1 text-center" id="error">ADD NEW PRODUCT</p>
+    <p class="h1 text-center">ADD NEW PRODUCT</p>
+    <p class="h7 text-danger" id="error"></p>
     <div class="mb-3 row">
       <div class="col">
         <label for="label" class="form-label">Name (*)</label>
@@ -50,7 +51,7 @@
       type="submit"
       class="btn btn-primary"
       id="#btn-submit"
-      onclick="validation(event)"
+      onclick="_addProduct(event)"
     >
       Submit
     </button>
