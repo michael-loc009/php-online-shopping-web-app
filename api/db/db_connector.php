@@ -20,7 +20,7 @@ class DatabaseConnector  {
     {
 
         try {
-            $this->accountConnection = new \PDO("sqlite:" ."../accounts.db");
+            $this->accountConnection = new \PDO("sqlite:" ."../db/accounts.db");
             return $this->accountConnection;
         } catch (\PDOException $e) {
             echo 'Database exception: ' . $e->getMessage();
@@ -31,7 +31,7 @@ class DatabaseConnector  {
     public function getShopDbConnection()
     {
         try {
-            $this->shopConnection = new \PDO("sqlite:" ."../shop.db");
+            $this->shopConnection = new \PDO("sqlite:" ."../db/shop.db");
             return $this->shopConnection;
         } catch (\PDOException $e) {
             echo 'Database exception: ' . $e->getMessage();
