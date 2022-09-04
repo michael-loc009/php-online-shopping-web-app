@@ -32,20 +32,16 @@
             <div class="album py-5  ">
                <div id="list-vendor"  class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 "> 
                </div>
-               <div>
-                  <!-- <ul class="pagination">
-                     <li id="btn_prev" class="page-item"><a class="page-link">Previous</a></li>
-                     <li id="btn_next" class="page-item"><a class="page-link">Next</a></li>
-                     </ul> -->
-               </div>
                </nav>
             </div>
          </div>
          <div id="create-products" class="tabcontent">
+            <?php include "./add/index.php"; ?>  
          </div>
       </div>
       <?php include "../template/footers/admin_footer.php"; ?>  
       <script src="../js/bootstrap.bundle.min.js"></script>
       <script src="../js/vendors.js"></script>
+      <script src="../js/addProduct.js"></script>
    </body>
 </html>
