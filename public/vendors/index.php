@@ -30,7 +30,7 @@
                </div>
             </nav>
             <div class="album py-5  ">
-               <div id="vendorsList"  class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 "> 
+               <div id="list-vendor"  class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 "> 
                </div>
                <div>
                   <!-- <ul class="pagination">
@@ -46,7 +46,6 @@
       </div>
       <?php include "../template/footers/admin_footer.php"; ?>  
       <script src="../js/bootstrap.bundle.min.js"></script>
-      <script src="../const/apiServices.js"></script> 
       <script src="../js/vendors.js"></script>
    </body>
 </html>

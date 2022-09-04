@@ -10,7 +10,7 @@
       <script src="https://kit.fontawesome.com/a8c4c24db6.js" crossorigin="anonymous"></script>
    </head>
    <body>
-      <?php include "../template/headers/admin_header.php"; ?>
+      <?php include "../template/headers/customer_header.php"; ?>
       <div class="container">
          <!-- Section -->
          <div id="products">

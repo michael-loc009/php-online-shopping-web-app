@@ -140,10 +140,11 @@ function renderList(list) {
   } else {
     html = list.map(renderItem).join("");
   }
-  document.getElementById("vendorsList").innerHTML = html;
+  document.getElementById("list-vendor").innerHTML = html;
 }
 
 async function index() {
+  console.log("????");
   try {
     const onSuccess = (response) => {
       if (Array.isArray(response)) {
