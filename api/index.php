@@ -42,6 +42,7 @@ if (strpos($uri, "/assets")) {
 }
 
 if (strpos($uri, '/db')) {
+    echo "unauthorized";
     notFoundResponse();
     return;
 }
