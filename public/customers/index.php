@@ -18,11 +18,11 @@
                <div class="container-fluid">
                   <form class="d-flex justify-content-between">
                      <div class="d-flex">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <input class="form-control me-2" type="search" placeholder="Min Price" aria-label="MinPrice">
-                        <input class="form-control me-2" type="search" placeholder="Max Price" aria-label="MaxPrice">
+                        <input id="search-input" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">      
+                        <input id="minPrice-input" class="form-control me-2" type="number" placeholder="Min Price" aria-label="MinPrice">
+                        <input id="maxPrice-input" class="form-control me-2" type="number" placeholder="Max Price" aria-label="MaxPrice">
                      </div>
-                     <button class="btn btn-outline-success" type="submit">Filter</button>
+                     <button onclick="searchVendors(event)" class="btn btn-outline-success" >Filter</button>
                   </form>
                </div>
             </nav>

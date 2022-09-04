@@ -143,8 +143,16 @@ function renderList(list) {
   document.getElementById("list-vendor").innerHTML = html;
 }
 
+function searchVendors(e) {
+  e.preventDefault();
+  const searchString = document.getElementById("search-input").value;
+  const results = vendors.filter((vendor) =>
+    vendor.Name.toLowerCase().includes(searchString.toLowerCase())
+  );
+  renderList(results);
+}
+
 async function index() {
-  console.log("????");
   try {
     const onSuccess = (response) => {
       if (Array.isArray(response)) {

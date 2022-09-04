@@ -24,8 +24,8 @@
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
                <div class="container-fluid">
                   <form class="d-flex">
-                     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                     <button class="btn btn-outline-success" type="submit">Search</button>
+                     <input id="search-input" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                     <button class="btn btn-outline-success" onclick="searchVendors(event)" >Search</button>
                   </form>
                </div>
             </nav>

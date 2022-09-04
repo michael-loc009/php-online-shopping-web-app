@@ -75,7 +75,7 @@ function renderCartItem(cartItem) {
               onclick="changeQuantity(${ProductID},'minus')">
            <i class="fas fa-minus"></i>
            </button>
-           <input id="form1" min="0" name="quantity" value="${quantity}"
+           <input id="item-quantity-${ProductID}" onchange="changeQuantity(${ProductID},'input')" min="0" name="quantity" value="${quantity}"
               class="form-control form-control-sm" />
            <button class="btn btn-link px-2"
            onclick="changeQuantity(${ProductID},'plus')">
@@ -167,6 +167,12 @@ function changeQuantity(id, type) {
     }
     if (type === "plus") {
       newQuantity++;
+    }
+    if (type === "input") {
+      const quantityInput = document.getElementById(
+        `item-quantity-${id}`
+      ).value;
+      newQuantity = quantityInput;
     }
     cart[selectedCartItemIndex].quantity = newQuantity;
     saveCartToLocalStorage(cart);
