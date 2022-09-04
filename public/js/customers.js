@@ -1,35 +1,7 @@
 const host = "http://php-online-shopping-backend.herokuapp.com/api/";
 const maxItemPerPage = 2;
 let currentPage = 1;
-let vendors = [
-  {
-    ProductID: "14",
-    Name: "test1",
-    ImagePath: "http://127.0.0.1/assets/products/test1/NV_2.png",
-    UpdatedAt: "2022-09-01T06:53:57Z",
-    CreatedAt: "2022-09-01T06:53:57Z",
-    Price: "10.2",
-    Description: "lalala",
-  },
-  {
-    ProductID: "15",
-    Name: "test2",
-    ImagePath: "http://127.0.0.1/assets/products/test2/NV_2.png",
-    UpdatedAt: "2022-09-01T06:56:22Z",
-    CreatedAt: "2022-09-01T06:56:22Z",
-    Price: "10.2",
-    Description: "lalala",
-  },
-  {
-    ProductID: "16",
-    Name: "test",
-    ImagePath: "http://127.0.0.1/assets/products/test/NV_2.png",
-    UpdatedAt: "2022-09-01T07:01:44Z",
-    CreatedAt: "2022-09-01T07:01:44Z",
-    Price: "10.2",
-    Description: "lalala",
-  },
-];
+let vendors = [];
 
 async function callAPI(method, url, onSuccess) {
   const xhttp = new XMLHttpRequest();
@@ -200,7 +172,7 @@ async function index() {
   try {
     const onSuccess = (response) => {
       if (Array.isArray(response)) {
-        // vendors = response;
+        vendors = response;
         renderList(vendors);
       }
     };
