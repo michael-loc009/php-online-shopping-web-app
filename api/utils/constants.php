@@ -7,6 +7,8 @@ $TARGET_VENDOR_PHOTO_DIR = "/assets/vendors/";
 $TARGET_SHIPPER_PHOTO_DIR = "/assets/shippers/";
 $DEFAULT_AVATAR_PROFILE_PHOTO = "default_avatar.jpg";
 
+$DEFAULT_SERVER_URL = "php-online-shopping-backend.herokuapp.com";
+
 $ORDER_ACTIVE_STATUS = 1;
 $ORDER_DELIVERED_STATUS = 2;
 $ORDER_CANCELLED_STATUS = 3;
