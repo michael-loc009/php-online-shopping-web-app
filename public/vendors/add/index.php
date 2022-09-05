@@ -4,19 +4,17 @@
     <p class="h7 text-danger" id="error"></p>
     <div class="mb-3 row">
       <div class="col">
-        <label for="label" class="form-label">Name (*)</label>
+        <label class="form-label">Name (*)</label>
         <input
           type="text"
           class="form-control"
           id="inputName"
-          aria-describedby="emailHelp"
           minlength="10"
           maxlength="20"
-          required
         />
       </div>
       <div class="col">
-        <label for="exampleInputEmail1" class="form-label">Price (*)</label>
+        <label class="form-label">Price (*)</label>
         <input
           type="number"
           min="0.00"
@@ -24,22 +22,15 @@
           step="0.01"
           class="form-control"
           id="inputPrice"
-          pattern="[+]?[0-9]"
-          aria-describedby="emailHelp"
-          require
         />
       </div>
     </div>
     <div class="mb-3">
-      <label for="exampleFormControlTextarea1" class="form-label"
-        >Description</label
-      >
+      <label class="form-label">Description</label>
       <textarea class="form-control" id="inputDescription" rows="3"></textarea>
     </div>
     <div class="mb-3">
-      <label for="exampleInputEmail1" class="form-label"
-        >Product Image (*)</label
-      >
+      <label class="form-label">Product Image (*)</label>
       <input
         type="file"
         class="form-control"

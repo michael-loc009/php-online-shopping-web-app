@@ -40,7 +40,7 @@ function _addProduct(e) {
     status = false;
     e.preventDefault();
   }
-  if (!file) {
+  if (!file.files[0]) {
     let element = document.getElementById("inputGetFile");
     element.classList.add("border-danger");
     status = false;
