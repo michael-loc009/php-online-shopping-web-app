@@ -35,7 +35,7 @@ class ProfilePhotoController
 
     private function updateProfilePhoto()
     {
-        global $BAD_REQUEST_STATUS_CODE, $SUCCESS_STATUS_CODE, $CUSTOMER_TYPE, $VENDOR_TYPE, $SHIPPER_TYPE, $INVALID_LOGIN_ERROR_CODE,$targetFolderPath , $TARGET_SHIPPER_PHOTO_DIR, $TARGET_VENDOR_PHOTO_DIR,$INTERNAL_SYSTEM_ERROR_CODE;
+        global $BAD_REQUEST_STATUS_CODE, $SUCCESS_STATUS_CODE, $CUSTOMER_TYPE, $VENDOR_TYPE, $SHIPPER_TYPE, $INVALID_LOGIN_ERROR_CODE,$TARGET_CUSTOMER_PHOTO_DIR , $TARGET_SHIPPER_PHOTO_DIR, $TARGET_VENDOR_PHOTO_DIR,$INTERNAL_SYSTEM_ERROR_CODE;
 
         $error = $this->validateUpdateProfileInputs($_POST);
         if ($error != "") {
@@ -50,7 +50,7 @@ class ProfilePhotoController
         switch ($type) {
             case $CUSTOMER_TYPE:
                 $error = $this->validateCustomerID($_POST);
-                $targetFolderPath = $targetFolderPath ;
+                $targetFolderPath = $TARGET_CUSTOMER_PHOTO_DIR ;
                 break;
             case $VENDOR_TYPE:
                 $error = $this->validateVendorID($_POST);
