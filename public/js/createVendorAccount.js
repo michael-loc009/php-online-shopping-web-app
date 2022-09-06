@@ -1,3 +1,5 @@
+// import { patternName } from "../constant/validation";
+
 function createCORSRequest(method, url) {
   var xhr = new XMLHttpRequest();
   if ("withCredentials" in xhr) {
@@ -10,15 +12,14 @@ function createCORSRequest(method, url) {
   }
   return xhr;
 }
-
 function createAccount(e) {
   const host = "https://php-online-shopping-backend.herokuapp.com/api/";
-  var pattern = /^[A-Za-z ]{5,}$/i;
+    var pattern = /^[a-zA-Z0-9_ ]{5,}$/i;
   var patternAddress = /^[a-zA-Z0-9_ ]{5,}$/i;
   var patternUsern = /^[a-zA-Z0-9_]{8,15}$/i;
   var patternPwd =
     /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])([a-zA-Z0-9!@#$%^&*]{8,})$/;
-  let name = document.getElementById("inputFullName").value;
+  let name = document.getElementById("inputBusinessName").value;
   let username = document.getElementById("inputUsername").value;
   let pw = document.getElementById("inputPassword").value;
   let pwConfirm = document.getElementById("inputPasswordConfrim").value;
@@ -27,14 +28,13 @@ function createAccount(e) {
   let status = true;
   let error = "";
 
-  console.log(pattern.test(address));
   if (!pattern.test(name)) {
     status = false;
     error += `Name at least 5 characters <br>`;
-    let element = document.getElementById("inputFullName");
+    let element = document.getElementById("inputBusinessName");
     element.classList.add("border-danger");
   } else {
-    let element = document.getElementById("inputFullName");
+    let element = document.getElementById("inputBusinessName");
     element.classList.remove("border-danger");
   }
 
@@ -128,17 +128,19 @@ function createAccount(e) {
           }
         }
       };
-      xhr.open("POST", `${host}customer`, true);
+      xhr.open("POST", `${host}vendor`, true);
       var formData = new FormData();
       formData.append("Username", username);
       formData.append("Password", pw);
-      formData.append("Name", name);
-      formData.append("Address", address);
+      formData.append("BusinessName", name);
+      formData.append("BusinessAddress", address);
       if (file.files[0]) {
+        console.log("hello");
         formData.append("ProfilePhoto", file.files[0]);
       }
       xhr.send(formData);
     } catch (error) {
+      console.log(error.message);
     }
   }
 }
