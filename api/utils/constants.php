@@ -61,6 +61,8 @@ $INVALID_LOGIN_ERROR_CODE = 28;
 
 $INVALID_ACCOUNT_TYPE_ERROR_CODE = 29;
 
+$INTERNAL_SYSTEM_ERROR_CODE = 30;
+
 $ERROR_RESPONSE = array();
 $ERROR_RESPONSE[$INVALID_FILE_ERROR_CODE] = "Sorry, uploaded file is not an image.";
 $ERROR_RESPONSE[$LARGE_FILE_ERROR_CODE] = "Sorry, uploaded file is too large.";
@@ -91,3 +93,4 @@ $ERROR_RESPONSE[$NON_EXISTING_DISTRIBUTION_HUB_ERROR_CODE] = "Sorry, distributio
 $ERROR_RESPONSE[$NON_EXISTING_ORDER_STATUS_ERROR_CODE]= "Sorry, order status does not exist.";
 $ERROR_RESPONSE[$INVALID_LOGIN_ERROR_CODE] = "Sorry, your username or password is not correct.";
 $ERROR_RESPONSE[$INVALID_ACCOUNT_TYPE_ERROR_CODE]= "Sorry, account type is invalid" ;
+$ERROR_RESPONSE[$INTERNAL_SYSTEM_ERROR_CODE] = "Sorry, something went wrong";

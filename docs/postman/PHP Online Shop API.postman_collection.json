@@ -7,6 +7,392 @@
 	},
 	"item": [
 		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Username\": \"luckystar135\",\r\n    \"Password\": \"P@ssword123\",\r\n    \"Type\": \"customer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login for shipper",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\": \"michalloc009\",\r\n    \"Password\": \"P@ssword123\",\r\n    \"Type\": \"shipper\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 06 Sep 2022 15:07:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, Accept, Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, X-Auth-Token"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Username\": \"michalloc009\",\n    \"ShipperID\": 1,\n    \"ProfilePhoto\": \"http://php-online-shopping-backend.herokuapp.com/assets/shippers/default_avatar.jpg\",\n    \"UpdatedAt\": \"2022-09-04T09:18:44Z\",\n    \"CreatedAt\": \"2022-09-04T09:18:44Z\",\n    \"DistributionHubID\": 1\n}"
+				},
+				{
+					"name": "Login for vendor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\": \"sonystore\",\r\n    \"Password\": \"P@ssword123\",\r\n    \"Type\": \"vendor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 06 Sep 2022 15:07:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, Accept, Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, X-Auth-Token"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Username\": \"sonystore\",\n    \"VendorID\": 1,\n    \"BusinessName\": \"Sony Inc\",\n    \"ProfilePhoto\": \"http://php-online-shopping-backend.herokuapp.com/assets/vendors/sonystore/sony_vendor.png\",\n    \"UpdatedAt\": \"2022-09-04T09:18:26Z\",\n    \"CreatedAt\": \"2022-09-04T09:18:26Z\",\n    \"BusinessAddress\": \"167 Duong so 1 phuong 13 quan Go Vap\"\n}"
+				},
+				{
+					"name": "Login for customer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\": \"luckystar135\",\r\n    \"Password\": \"P@ssword123\",\r\n    \"Type\": \"customer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 06 Sep 2022 15:07:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, Accept, Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, X-Auth-Token"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Username\": \"luckystar135\",\n    \"CustomerID\": 5,\n    \"Name\": \"Nguyen Van Tai\",\n    \"ProfilePhoto\": \"http://php-online-shopping-backend.herokuapp.com/assets/customers/default_avatar.jpg\",\n    \"UpdatedAt\": \"2022-09-04T09:17:56Z\",\n    \"CreatedAt\": \"2022-09-04T09:17:56Z\",\n    \"Address\": \"167 Duong so 1 phuong 13 quan Go Vap\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Profile Photo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "ProfilePhoto",
+							"description": "optional",
+							"type": "file",
+							"src": "/C:/Users/DEEL/OneDrive/Documents/1988044-Nguyen_Dinh_Loc-QLHS-4/MEDIA/hoc_sinh_19.png"
+						},
+						{
+							"key": "Username",
+							"value": "luckystar135",
+							"type": "text"
+						},
+						{
+							"key": "Type",
+							"value": "customer",
+							"type": "text"
+						},
+						{
+							"key": "CustomerID",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "ShipperID",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "VendorID",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/profile-photo",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"profile-photo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Profile Photo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ProfilePhoto",
+									"description": "optional",
+									"type": "file",
+									"src": "/C:/Users/DEEL/OneDrive/Documents/Online Shop/iphone13.jpg"
+								},
+								{
+									"key": "Username",
+									"value": "luckystar135",
+									"type": "text"
+								},
+								{
+									"key": "Type",
+									"value": "customer",
+									"type": "text"
+								},
+								{
+									"key": "CustomerID",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "ShipperID",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "VendorID",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/profile-photo",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"profile-photo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 06 Sep 2022 16:31:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, Accept, Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, X-Auth-Token"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
 			"name": "Get Order Status",
 			"request": {
 				"method": "GET",
@@ -174,19 +560,19 @@
 					"formdata": [
 						{
 							"key": "Name",
-							"value": "Playstation 5",
+							"value": "Motobike Super",
 							"description": "Required, 10 to 20 characters, Unique",
 							"type": "text"
 						},
 						{
 							"key": "Description",
-							"value": "The PS5 console unleashes new gaming possibilities that you never anticipated.",
+							"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
 							"description": "No more than 500 characters",
 							"type": "text"
 						},
 						{
 							"key": "Price",
-							"value": "399.99",
+							"value": "30000",
 							"description": "greater than zero",
 							"type": "text"
 						},
@@ -194,7 +580,7 @@
 							"key": "ProductPhoto",
 							"description": "required",
 							"type": "file",
-							"src": "/C:/Users/DEEL/OneDrive/Documents/Online Shop/playstation_5.jpg"
+							"src": "/C:/Users/DEEL/OneDrive/Documents/Online Shop/bike.jpg"
 						}
 					]
 				},
@@ -540,6 +926,137 @@
 							"type": "file",
 							"src": "/C:/Users/DEEL/OneDrive/Documents/1988044-Nguyen_Dinh_Loc-QLHS-4/MEDIA/hoc_sinh_19.png",
 							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/customer",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Customer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Username",
+									"value": "michaelloc009",
+									"type": "text"
+								},
+								{
+									"key": "Password",
+									"value": "P@ssword123",
+									"type": "text"
+								},
+								{
+									"key": "Name",
+									"value": "Nguyen Dinh Loc",
+									"type": "text"
+								},
+								{
+									"key": "Address",
+									"value": "167 Duong so 1 phuong 13 quan Go Vap",
+									"type": "text"
+								},
+								{
+									"key": "ProfilePhoto",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/customer",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"customer"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Sep 2022 09:25:58 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Customer Profile Photo",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "CustomerID",
+							"value": "5",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "ProfilePhoto",
+							"description": "optional",
+							"type": "file",
+							"src": "/C:/Users/DEEL/OneDrive/Documents/1988044-Nguyen_Dinh_Loc-QLHS-4/MEDIA/hoc_sinh_19.png"
 						}
 					]
 				},

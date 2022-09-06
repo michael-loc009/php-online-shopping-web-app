@@ -131,12 +131,12 @@ class Customer
         } 
     }
 
-    public function update($customerID, $profilePhotoPath){
-        $query = "UPDATE TABLE Customer SET ProfilePhoto = :ProfilePhoto WHERE CustomerID = :CustomerID";
+    public function update($username, $profilePhotoPath){
+        $query = "UPDATE Customer SET ProfilePhoto = :ProfilePhoto WHERE Username = :Username";
 
         try {
             $stmt = $this->db->prepare($query);
-            $stmt->bindValue(":CustomerID", $customerID);
+            $stmt->bindValue(":Username", $username);
             $stmt->bindValue(":ProfilePhoto", $profilePhotoPath);
             $stmt->execute();
     

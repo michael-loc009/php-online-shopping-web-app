@@ -22,6 +22,7 @@ include_once "./controller/vendor_controller.php";
 include_once "./controller/shipper_controller.php";
 include_once "./controller/order_controller.php";
 include_once "./controller/authentication_controller.php";
+include_once "./controller/profile_photo_controller.php";
 
 include_once "./db/db_connector.php";
 
@@ -78,6 +79,9 @@ if (strpos($uri, "/orderStatus")) {
 } else if (strpos($uri, "/login")) {
     $authcontroller = new AuthenticationController($accountDb, $requestMethod);
     $authcontroller->processRequest();
+} else if (strpos($uri, "/profile-photo")) {
+    $profilePhotocontroller = new ProfilePhotoController($accountDb, $requestMethod);
+    $profilePhotocontroller->processRequest();
 } else {
     notFoundResponse();
 }

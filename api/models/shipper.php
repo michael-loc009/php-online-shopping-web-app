@@ -127,4 +127,20 @@ class Shipper
             exit($e->getMessage());
         } 
     }
+
+    public function update($username, $profilePhotoPath){
+        $query = "UPDATE Shipper SET ProfilePhoto = :ProfilePhoto WHERE Username = :Username";
+
+        try {
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(":Username", $username);
+            $stmt->bindValue(":ProfilePhoto", $profilePhotoPath);
+            $stmt->execute();
+    
+            return true;
+        } catch (Exception $e) {
+            echo 'Database exception: ' . $e->getMessage();
+            exit($e->getMessage());
+        } 
+    }
 }
