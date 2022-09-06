@@ -1,12 +1,13 @@
 
+
 function createAccount(e) {
   const host = "https://php-online-shopping-backend.herokuapp.com/api/";
-  var pattern = /^[a-zA-Z0-9_ ]{5,}$/i;
+  var pattern = /^[A-Za-z ]{5,}$/i;
   var patternAddress = /^[a-zA-Z0-9_ ]{5,}$/i;
   var patternUsern = /^[a-zA-Z0-9_]{8,15}$/i;
   var patternPwd =
     /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])([a-zA-Z0-9!@#$%^&*]{8,})$/;
-  let name = document.getElementById("inputBusinessName").value;
+  let name = document.getElementById("inputFullName").value;
   let username = document.getElementById("inputUsername").value;
   let pw = document.getElementById("inputPassword").value;
   let pwConfirm = document.getElementById("inputPasswordConfrim").value;
@@ -15,13 +16,13 @@ function createAccount(e) {
   let status = true;
   let error = "";
 
-  if (!pattern.test(removeDuplicateSpace(name))) {
+  if (!pattern.test(name)) {
     status = false;
     error += `Name at least 5 characters <br>`;
-    let element = document.getElementById("inputBusinessName");
+    let element = document.getElementById("inputFullName");
     element.classList.add("border-danger");
   } else {
-    let element = document.getElementById("inputBusinessName");
+    let element = document.getElementById("inputFullName");
     element.classList.remove("border-danger");
   }
 
@@ -115,17 +116,17 @@ function createAccount(e) {
           }
         }
       };
+      xhr.open("POST", `${host}customer`, true);
       var formData = new FormData();
       formData.append("Username", username);
       formData.append("Password", pw);
-      formData.append("BusinessName", name);
-      formData.append("BusinessAddress", address);
+      formData.append("Name", name);
+      formData.append("Address", address);
       if (file.files[0]) {
         formData.append("ProfilePhoto", file.files[0]);
       }
       xhr.send(formData);
     } catch (error) {
-      console.log(error.message);
     }
   }
 }
