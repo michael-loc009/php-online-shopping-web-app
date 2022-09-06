@@ -21,9 +21,9 @@ include_once "./controller/customer_controller.php";
 include_once "./controller/vendor_controller.php";
 include_once "./controller/shipper_controller.php";
 include_once "./controller/order_controller.php";
+include_once "./controller/authentication_controller.php";
 
 include_once "./db/db_connector.php";
-
 
 $shopDb = (new DatabaseConnector())->getShopDbConnection();
 $accountDb = (new DatabaseConnector())->getAccountDbConnection();
@@ -75,6 +75,9 @@ if (strpos($uri, "/orderStatus")) {
 } else if (strpos($uri, "/order")) {
     $ordercontroller = new OrderController($accountDb, $shopDb, $requestMethod);
     $ordercontroller->processRequest();
+} else if (strpos($uri, "/login")) {
+    $authcontroller = new AuthenticationController($accountDb, $requestMethod);
+    $authcontroller->processRequest();
 } else {
     notFoundResponse();
 }

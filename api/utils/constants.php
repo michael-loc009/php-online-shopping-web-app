@@ -14,6 +14,10 @@ $ORDER_DELIVERED_STATUS = 2;
 $ORDER_CANCELLED_STATUS = 3;
 
 
+$CUSTOMER_TYPE = "customer";
+$VENDOR_TYPE = "vendor";
+$SHIPPER_TYPE = "shipper";
+
 // Http Status Codes
 $SUCCESS_STATUS_CODE = "HTTP/1.1 200 OK";
 $CREATED_STATUS_CODE = "HTTP/1.1 201 Created";
@@ -53,6 +57,10 @@ $MISSING_ORDER_ITEMS_ERROR_CODE = 25;
 $NON_EXISTING_DISTRIBUTION_HUB_ERROR_CODE = 26;
 $NON_EXISTING_ORDER_STATUS_ERROR_CODE = 27;
 
+$INVALID_LOGIN_ERROR_CODE = 28;
+
+$INVALID_ACCOUNT_TYPE_ERROR_CODE = 29;
+
 $ERROR_RESPONSE = array();
 $ERROR_RESPONSE[$INVALID_FILE_ERROR_CODE] = "Sorry, uploaded file is not an image.";
 $ERROR_RESPONSE[$LARGE_FILE_ERROR_CODE] = "Sorry, uploaded file is too large.";
@@ -81,3 +89,5 @@ $ERROR_RESPONSE[$INVALID_ORDER_QUANTITY_ERROR_CODE] = "Sorry, order item quantit
 $ERROR_RESPONSE[$MISSING_ORDER_ITEMS_ERROR_CODE] = "Sorry, order items are missing.";
 $ERROR_RESPONSE[$NON_EXISTING_DISTRIBUTION_HUB_ERROR_CODE] = "Sorry, distribution hub does not exist";
 $ERROR_RESPONSE[$NON_EXISTING_ORDER_STATUS_ERROR_CODE]= "Sorry, order status does not exist.";
+$ERROR_RESPONSE[$INVALID_LOGIN_ERROR_CODE] = "Sorry, your username or password is not correct.";
+$ERROR_RESPONSE[$INVALID_ACCOUNT_TYPE_ERROR_CODE]= "Sorry, account type is invalid" ;

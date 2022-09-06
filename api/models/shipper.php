@@ -51,6 +51,12 @@ class Shipper
                 
                 $shipper = array(
                     "Username" => $row["Username"],
+                    "Password" => $row["Password"],
+                    "ShipperID" => (int) $row["ShipperID"],
+                    "ProfilePhoto" => $row["ProfilePhoto"],
+                    "UpdatedAt" => $row["UpdatedAt"],
+                    "CreatedAt" => $row["CreatedAt"],
+                    "DistributionHubID" => (int) $row["DistributionHubID"]
                 );
              }
 

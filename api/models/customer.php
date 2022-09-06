@@ -52,6 +52,13 @@ class Customer
                 
                 $customer = array(
                     "Username" => $row["Username"],
+                    "Password" => $row["Password"],
+                    "CustomerID" => (int) $row["CustomerID"],
+                    "Name" => $row["Name"],
+                    "ProfilePhoto" => $row["ProfilePhoto"],
+                    "UpdatedAt" => $row["UpdatedAt"],
+                    "CreatedAt" => $row["CreatedAt"],
+                    "Address" => $row["Address"]
                 );
              }
 
@@ -115,6 +122,22 @@ class Customer
         try {
             $stmt = $this->db->prepare($query);
             $stmt->bindValue(":CustomerID", $customerID);
+            $stmt->execute();
+    
+            return true;
+        } catch (Exception $e) {
+            echo 'Database exception: ' . $e->getMessage();
+            exit($e->getMessage());
+        } 
+    }
+
+    public function update($customerID, $profilePhotoPath){
+        $query = "UPDATE TABLE Customer SET ProfilePhoto = :ProfilePhoto WHERE CustomerID = :CustomerID";
+
+        try {
+            $stmt = $this->db->prepare($query);
+            $stmt->bindValue(":CustomerID", $customerID);
+            $stmt->bindValue(":ProfilePhoto", $profilePhotoPath);
             $stmt->execute();
     
             return true;

@@ -52,6 +52,13 @@ class Vendor
                 
                 $vendor = array(
                     "Username" => $row["Username"],
+                    "Password" => $row["Password"],
+                    "VendorID" => (int) $row["VendorID"],
+                    "BusinessName" => $row["BusinessName"],
+                    "ProfilePhoto" => $row["ProfilePhoto"],
+                    "UpdatedAt" => $row["UpdatedAt"],
+                    "CreatedAt" => $row["CreatedAt"],
+                    "BusinessAddress" => $row["BusinessAddress"]
                 );
              }
 
