@@ -12,3 +12,11 @@ export async function callAPI(method, url) {
   xhttp.open(method, apiUrl, true);
   xhttp.send();
 }
+
+export const removeDuplicateSpace = (text) => {
+  if (text) {
+    let str = text.replace(/ +(?= )/g, "");
+    return str;
+  }
+  return "";
+};
