@@ -27,6 +27,14 @@
         </table>
       </div>
     </div>
+     <!-- Modal Product Details -->
+     <div id="orderDetailsModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span onclick="onCloseOrderDetailsModal()" class="close">&times;</span>
+            <div id="modal-order-details-body"></div>
+        </div>
+    </div>
 
     <?php include "../template/footers/admin_footer.php"; ?>
     <script src="../js/bootstrap.bundle.min.js"></script>

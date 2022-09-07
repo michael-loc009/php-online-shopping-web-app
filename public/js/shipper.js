@@ -1,25 +1,5 @@
-const maxItemPerPage = 2;
-let currentPage = 1;
-let vendors = [];
 let orderStatus = [];
 let orders = [];
-
-const openSection = (evt, sectionName) => {
-  var i, tabcontent, tablinks;
-
-  tabcontent = document.getElementsByClassName("tabcontent");
-  for (i = 0; i < tabcontent.length; i++) {
-    tabcontent[i].style.display = "none";
-  }
-
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace("active", "");
-  }
-
-  document.getElementById(sectionName).style.display = "block";
-  evt.currentTarget.className += " active";
-};
 
 async function callAPI(method, url, onSuccess) {
   const xhttp = new XMLHttpRequest();
@@ -32,6 +12,52 @@ async function callAPI(method, url, onSuccess) {
   };
   xhttp.open(method, apiUrl, true);
   xhttp.send();
+}
+
+function renderItemDetails(item) {
+  console.log(item);
+  let htmlProfile = "";
+  let orderDetailsHTML = "";
+  for (let itemDetails of item.OrderDetails) {
+    const orderDetails = JSON.parse(itemDetails);
+    for (let order of orderDetails) {
+      for (let property in order) {
+        orderDetailsHTML += `<div class="row"><div class="col-sm-3"><p class="mb-0">${property}</p></div><div class="col-sm-9"><p class="text-muted mb-0">${order[property]}</p></div></div><hr/>`;
+      }
+    }
+  }
+  for (const property in item) {
+    if (property === "OrderDetails" || property === "Status") {
+      continue;
+    }
+    htmlProfile += `<div class="row"><div class="col-sm-3"><p class="mb-0">${property}</p></div><div class="col-sm-9"><p class="text-muted mb-0">${item[property]}</p></div></div><hr/>`;
+  }
+  htmlProfile = `${htmlProfile}${`<div class="row"><div class="col-sm-3"><p class="mb-0">Order Details</p></div><div class="col-sm-9"><p class="text-muted mb-0">${orderDetailsHTML}</p></div></div><hr/>`}`;
+  return htmlProfile;
+}
+
+function onCloseOrderDetailsModal() {
+  const modal = document.getElementById("orderDetailsModal");
+  document.getElementById("modal-order-details-body").innerHTML = "";
+  modal.style.display = "none";
+}
+
+function openOrderDetails(id) {
+  const item = orders.find((item) => item.OrderID == id);
+  if (item) {
+    const modal = document.getElementById("orderDetailsModal");
+    // When the user clicks the button, open the modal
+    modal.style.display = "block";
+    const html = renderItemDetails(item);
+    document.getElementById("modal-order-details-body").innerHTML = html;
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target == modal) {
+        modal.style.display = "none";
+      }
+    };
+  }
 }
 
 async function updateStatus(orderID, statusID) {
@@ -69,6 +95,7 @@ function renderItem(item, index) {
       <button
           class="btn btn-secondary"
           type="button"
+          onclick="openOrderDetails(${OrderID})"
         >
           Detail
         </button>
