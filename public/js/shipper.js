@@ -41,7 +41,7 @@ async function updateStatus(orderID, statusID) {
   };
 
   let url = `http://php-online-shopping-backend.herokuapp.com//api/api/order`;
-  let http = createCORSRequest("put", url);
+  let http = createCORSRequest("PUT", url);
   http.open("PUT", url);
   http.send(JSON.stringify(body)); // Make sure to stringify
   http.onload = function (response) {
@@ -49,6 +49,9 @@ async function updateStatus(orderID, statusID) {
     console.log(response, http);
     if (http.status === 201) {
       // checkoutSuccess();
+      location.reload();
+    } else {
+      alert("Something wrong when update order status ! Please try again");
     }
   };
 }
@@ -83,7 +86,9 @@ function renderItem(item, index) {
             .filter((status) => status.OrderStatusID !== Status)
             .map((status) => {
               return `<li>
-            <a class="dropdown-item" href="#">${status.Label.toUpperCase()}</a>
+            <button onclick="updateStatus(${OrderID},${
+                status.OrderStatusID
+              })" class="dropdown-item" href="#">${status.Label.toUpperCase()}</button>
           </li>`;
             })}
         </ul>
