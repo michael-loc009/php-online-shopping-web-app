@@ -83,7 +83,7 @@
     </div>
     <script src="../../constant/apiServices.js"></script>
     <script src="../../css/bootstrap.bundle.min.js"></script>
-    <script src="../../css/createCustomerAccount.js"></script>
+    <script src="../../js/createCustomerAccount.js"></script>
 
   </body>
 </html>
