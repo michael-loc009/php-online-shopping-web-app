@@ -1,8 +1,6 @@
-<<<<<<< HEAD
 const maxItemPerPage = 2;
 let currentPage = 1;
-=======
->>>>>>> 00263f62ae46a86e2df927e85ceeadc41fd460bb
+
 let vendors = [];
 
 async function callAPI(method, url, onSuccess) {
@@ -122,9 +120,9 @@ function renderList(list) {
   } else {
     html = list.map(renderItem).join("");
   }
-  
+
   let listEle = document.getElementById("vendorsList");
-  if (listEle){
+  if (listEle) {
     listEle.innerHTML = html;
   }
 }
