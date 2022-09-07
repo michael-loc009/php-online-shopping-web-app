@@ -1,41 +1,16 @@
-function createCORSRequest(method, url) {
-  var xhr = new XMLHttpRequest();
-  if ("withCredentials" in xhr) {
-    xhr.open(method, url, true);
-  } else if (typeof XDomainRequest != "undefined") {
-    xhr = new XDomainRequest();
-    xhr.open(method, url);
-  } else {
-    xhr = null;
-  }
-  return xhr;
-}
-
-function createAccount(e) {
-  const host = "https://php-online-shopping-backend.herokuapp.com/api/";
-  var pattern = /^[A-Za-z ]{5,}$/i;
-  var patternAddress = /^[a-zA-Z0-9_ ]{5,}$/i;
+function createAccount() {
   var patternUsern = /^[a-zA-Z0-9_]{8,15}$/i;
   var patternPwd =
     /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])([a-zA-Z0-9!@#$%^&*]{8,})$/;
-  let name = document.getElementById("inputFullName").value;
+
+  let hub = document.getElementById("list_option").value;
   let username = document.getElementById("inputUsername").value;
   let pw = document.getElementById("inputPassword").value;
   let pwConfirm = document.getElementById("inputPasswordConfrim").value;
-  let address = document.getElementById("inputAddress").value;
   let file = document.getElementById("inputGetFile");
   let status = true;
   let error = "";
-
-  if (!pattern.test(name)) {
-    status = false;
-    error += `Name at least 5 characters <br>`;
-    let element = document.getElementById("inputFullName");
-    element.classList.add("border-danger");
-  } else {
-    let element = document.getElementById("inputFullName");
-    element.classList.remove("border-danger");
-  }
+  document.getElementById("error").innerHTML = "";
 
   if (!patternUsern.test(username)) {
     status = false;
@@ -71,22 +46,10 @@ function createAccount(e) {
     status = false;
     error += `Password and Confrim Password not match <br>`;
   }
-
-  if (!patternAddress.test(address)) {
-    let element = document.getElementById("inputAddress");
-    element.classList.add("border-danger");
-    status = false;
-    error += `Adress less than 5 characters`;
-  } else {
-    let element = document.getElementById("inputAddress");
-    element.classList.remove("border-danger");
-  }
-
   if (!status) {
     document.getElementById("error").innerHTML = error;
-  } else {
-    try {
-      var xhr = createCORSRequest("post", `${host}product`);
+  }else{
+    var xhr = createCORSRequest("post", `${host}shipper`);
       xhr.addEventListener(
         "progress",
         function (e) {
@@ -127,17 +90,37 @@ function createAccount(e) {
           }
         }
       };
-      xhr.open("POST", `${host}customer`, true);
       var formData = new FormData();
       formData.append("Username", username);
       formData.append("Password", pw);
-      formData.append("Name", name);
-      formData.append("Address", address);
+      formData.append("DistributionHubID", hub);
       if (file.files[0]) {
         formData.append("ProfilePhoto", file.files[0]);
       }
       xhr.send(formData);
-    } catch (error) {
-    }
   }
 }
+
+const renderOption = (list_option) => {
+  let _value = "";
+  list_option.map((item, index) => {
+    const { Address, DistributionHubID, Name } = item;
+    _value += `<option value="${DistributionHubID}">${Name} - Address:${Address}</option>`;
+  });
+  document.getElementById("list_option").innerHTML = _value;
+};
+
+async function index() {
+  try {
+    const onSuccess = (response) => {
+      if (Array.isArray(response)) {
+        renderOption(response);
+      }
+    };
+    await callAPI("GET", "/api/distributionHub", onSuccess);
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+index();

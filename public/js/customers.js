@@ -118,7 +118,11 @@ function renderList(list) {
   } else {
     html = list.map(renderItem).join("");
   }
-  document.getElementById("vendorsList").innerHTML = html;
+  
+  let listEle = document.getElementById("vendorsList");
+  if (listEle){
+    listEle.innerHTML = html;
+  }
 }
 
 function getCart() {
