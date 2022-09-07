@@ -18,7 +18,7 @@ function createAccount(e) {
 
   if (!pattern.test(name)) {
     status = false;
-    error += `Name at least 5 characters <br>`;
+    error += `Name at least 5 characters without special characters<br>`;
     let element = document.getElementById("inputFullName");
     element.classList.add("border-danger");
   } else {
