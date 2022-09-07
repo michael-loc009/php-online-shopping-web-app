@@ -50,7 +50,7 @@
               type="file"
               class="form-control"
               id="inputGetFile"
-              accept="image/*"
+              accept="image/png, image/jpeg, image/jpg"
             />
           </div>
           <button
