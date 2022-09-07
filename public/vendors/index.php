@@ -70,7 +70,7 @@
     <script src="../js/vendors.js"></script>
     <script src="../js/addProduct.js"></script>
     <script>
-      window.onload = authenticate("vendor", "vendors");
+      // window.onload = authenticate("vendor", "vendors");
     </script>
   </body>
 </html>

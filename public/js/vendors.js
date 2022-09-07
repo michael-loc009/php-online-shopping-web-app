@@ -2,21 +2,23 @@ const maxItemPerPage = 2;
 let currentPage = 1;
 let vendors = [];
 
-const openSection = (evt, sectionName) => {
+const openSection = (evt, sectionName, isFirstInit = false) => {
   var i, tabcontent, tablinks;
 
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
-
-  tablinks = document.getElementsByClassName("tablinks");
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace("active", "");
-  }
-
   document.getElementById(sectionName).style.display = "block";
-  evt.currentTarget.className += " active";
+
+  if (!isFirstInit) {
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace("active", "");
+    }
+
+    evt.currentTarget.className += " active";
+  }
 };
 
 function prevPage() {
@@ -156,6 +158,7 @@ async function index() {
       if (Array.isArray(response)) {
         vendors = response;
         renderList(vendors);
+        openSection(null, "products", true);
         // changePage(1);
         renderPagination(response);
       }
