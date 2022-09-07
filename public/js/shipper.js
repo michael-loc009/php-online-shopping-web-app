@@ -74,8 +74,8 @@ async function updateStatus(orderID, statusID) {
     // Do whatever with response
     console.log(response, http);
     if (http.status === 201) {
-      // checkoutSuccess();
-      location.reload();
+      //re-render list
+      getOrdersByDistributionHubID();
     } else {
       alert("Something wrong when update order status ! Please try again");
     }
