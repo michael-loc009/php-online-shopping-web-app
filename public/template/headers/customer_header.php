@@ -68,7 +68,7 @@
                             aria-label="Close"></button>
                     </div>
                 </div>
-                <div id="modal-body">
+                <div id="modal-cart-body">
                     <section class="h-100" style="background-color: #eee;">
                         <div class="container h-100 py-5">
                             <div class="row d-flex justify-content-center align-items-center h-100">

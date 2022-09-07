@@ -51,7 +51,7 @@ function renderItemDetails(item) {
 
 function onCloseProductDetailsModal() {
   const modal = document.getElementById("productDetailsModal");
-  document.getElementById("modal-body").innerHTML = "";
+  // document.getElementById("modal-body").innerHTML = "";
   modal.style.display = "none";
 }
 
@@ -186,6 +186,7 @@ function addToCart(id) {
     }
     saveCartToLocalStorage(cart);
     renderCartQuantity(cart);
+    onCloseProductDetailsModal();
   }
 }
 
