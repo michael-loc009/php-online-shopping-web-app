@@ -110,6 +110,7 @@ async function index() {
       if (Array.isArray(response)) {
         console.log(response);
         renderList(response);
+        console.log(response);
         // changePage(1);
         // renderPagination(response);
       }
