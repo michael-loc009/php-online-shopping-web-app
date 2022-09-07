@@ -1,5 +1,3 @@
-
-
 function createAccount(e) {
   const host = "https://php-online-shopping-backend.herokuapp.com/api/";
   var pattern = /^[A-Za-z ]{5,}$/i;

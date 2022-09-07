@@ -64,6 +64,7 @@
     </div>
     <?php include "../template/footers/admin_footer.php"; ?>
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../constant/time.js"></script>
     <script src="../constant/apiServices.js"></script>
     <script src="../js/helpers.js"></script>
     <script src="../js/vendors.js"></script>

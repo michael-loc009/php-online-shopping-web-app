@@ -79,7 +79,7 @@ function renderItem(item, index) {
     </div>
       <p class="card-text">Description: ${Description}</p>
       <div class="d-flex justify-content-between align-items-center">
-        <small class="text-muted">Last updated:9 mins</small>
+        <small class="text-muted">Last updated:${getFromDate(UpdatedAt)}</small>
       </div>
     </div>
   </div>

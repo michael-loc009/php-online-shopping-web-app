@@ -44,7 +44,7 @@
             </div>
           </div>
           <div class="mb-3">
-            <label class="form-label">Profile Image (*)</label>
+            <label class="form-label">Profile Image</label>
             <input
               type="file"
               class="form-control"
