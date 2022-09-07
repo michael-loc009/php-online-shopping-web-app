@@ -27,7 +27,7 @@
                </div>
             </nav>
             <div class="album py-5  ">
-               <div id="vendorsList"  class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 "> 
+               <div id="vendorsList" data-current-page="1"  class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3 "> 
                </div>
                <div>
                   <!-- <ul class="pagination">
@@ -47,9 +47,8 @@
             <div id="modal-details-body"></div>
          </div>
       </div>
-     
       <?php include "../template/footers/admin_footer.php"; ?>  
       <script src="../js/bootstrap.bundle.min.js"></script>
-      <script src="../js/customers.js"></script>
+      <!-- <script src="../js/customers.js"></script> -->
    </body>
 </html>

@@ -93,12 +93,16 @@ function renderCartItem(cartItem) {
   </div>`;
 }
 
-function renderCartFooter(list) {
+function getCartTotal(cart) {
   let cartTotal = 0;
-  for (let cartItem of list) {
+  for (let cartItem of cart) {
     const { item, quantity } = cartItem;
     cartTotal += quantity * item.Price;
   }
+  return cartTotal;
+}
+function renderCartFooter(cart) {
+  let cartTotal = getCartTotal(cart);
   let html = `<div class="card mb-4">
     <div class="card-body d-flex align-items-center justify-content-between">
        <button onclick="clearCart()" type="button" class="btn btn-danger btn-block">Clear cart</button>
@@ -115,7 +119,7 @@ function renderCartFooter(list) {
 
       <ul class="nav nav-pills">
       <button onclick="closeCart()" type="button" class="btn btn-secondary btn-block ">Close</button>
-      <button onclick="clearCart()" type="button" class="btn btn-warning btn-block  ms-3">Checkout</button>
+      <button onclick="checkout()" type="button" class="btn btn-warning btn-block  ms-3">Checkout</button>
       </ul>
     </header>
   </div>
@@ -123,7 +127,7 @@ function renderCartFooter(list) {
   </div>
   
   `;
-  if (list.length === 0) {
+  if (cart.length === 0) {
     html = "";
   }
   document.getElementById("cart-footer").innerHTML = html;
@@ -178,6 +182,38 @@ function changeQuantity(id, type) {
     saveCartToLocalStorage(cart);
     renderCart(cart);
   }
+}
+
+function checkoutSuccess() {
+  alert("Checkout successfully !");
+  clearCart();
+  closeCart();
+}
+
+async function checkout() {
+  const cart = getCart();
+  const cartTotal = getCartTotal(cart);
+  const body = {
+    CustomerID: 5,
+    Total: cartTotal,
+    OrderItems: cart.map((cartItem) => {
+      return {
+        ProductID: cartItem.item.ProductID,
+        Quantity: cartItem.quantity,
+      };
+    }),
+  };
+
+  const http = new XMLHttpRequest();
+  http.open("POST", "/api/order");
+  http.setRequestHeader("Content-type", "application/json");
+  http.send(JSON.stringify(body)); // Make sure to stringify
+  http.onload = function (response) {
+    // Do whatever with response
+    if (http.status === 200) {
+      checkoutSuccess();
+    }
+  };
 }
 
 function index() {

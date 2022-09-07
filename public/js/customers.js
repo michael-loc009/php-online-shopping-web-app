@@ -1,9 +1,7 @@
-const host = "http://php-online-shopping-backend.herokuapp.com/api/";
-const maxItemPerPage = 2;
-let currentPage = 1;
 let vendors = [];
 
 async function callAPI(method, url, onSuccess) {
+  const host = "http://php-online-shopping-backend.herokuapp.com/api/";
   const xhttp = new XMLHttpRequest();
   const apiUrl = `${host}${url}`;
   xhttp.onreadystatechange = function () {
@@ -93,7 +91,7 @@ function renderItem(item, index) {
     <p>${Name}</p>
     <p>${Price}</p>
     </div>
-      <p class="card-text">Description: ${Description}</p>
+      <p class="card-text vendor-description">Description: ${Description}</p>
       <div class="d-flex justify-content-between align-items-center">
         <small class="text-muted">Last updated:9 mins</small>
       </div>
