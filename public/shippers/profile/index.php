@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Customer Profile</title>
+    <title>Shipper Profile</title>
 
     <!-- Favicons -->
     <link rel="icon" href="../../assets/favicon.ico">
@@ -17,7 +17,7 @@
 </head>
 
 <body>
-    <?php include "../../template/headers/customer_header.php"; ?>
+    <?php include "../../template/headers/shipper_header.php"; ?>
    
     <?php include "../../template/cards/profile_card.php" ?>
     <?php include "../../template/footers/admin_footer.php"; ?>
@@ -25,8 +25,6 @@
     <script src="../../js/bootstrap.bundle.min.js"></script>
     <script src="../../js/helpers.js"></script>
     <script src="../../constant/apiServices.js"></script>
-    <script src="../../js/customers.js"></script>
-    <script src="../../js/cartController.js"></script>
     <script src="../../js/updateProfilePhoto.js"></script>
 
 </body>
@@ -34,7 +32,7 @@
 </html>
 <script>
     window.onload = function () {
-        authenticate("customer", "customers");
-        generateAccountProfile("customer");
+        authenticate("shipper", "shippers");
+        generateAccountProfile("shipper");
     };
 </script>

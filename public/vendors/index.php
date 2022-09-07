@@ -4,11 +4,12 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <title>Vendor</title>
+      <link rel="icon" href="../../assets/favicon.ico">
       <link href="../css/bootstrap.min.css" rel="stylesheet">
       <link rel="stylesheet" href="../css/vendors.css">
    </head>
    <body>
-      <?php include "../template/headers/admin_header.php"; ?>
+      <?php include "../template/headers/vendor_header.php"; ?>
       <div class="container">
          <!-- Tabs -->
          <ul class="nav nav-pills mb-5">
@@ -35,12 +36,19 @@
             </div>
          </div>
          <div id="create-products" class="tabcontent">
-            <?php include "./add/index.php"; ?>  
+            <?php include "./addProduct/index.php"; ?>  
          </div>
       </div>
       <?php include "../template/footers/admin_footer.php"; ?>  
       <script src="../js/bootstrap.bundle.min.js"></script>
+      <script src="../constant/apiServices.js"></script>
+      <script src="../js/helpers.js"></script>
       <script src="../js/vendors.js"></script>
       <script src="../js/addProduct.js"></script>
+   
    </body>
 </html>
+
+<script>
+    window.onload = authenticate("vendor", "vendors");
+</script>

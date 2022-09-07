@@ -1,4 +1,3 @@
-const host = "http://php-online-shopping-backend.herokuapp.com/api/";
 const maxItemPerPage = 2;
 let currentPage = 1;
 let vendors = [];
@@ -12,7 +11,6 @@ const openSection = (evt, sectionName) => {
   }
 
   tablinks = document.getElementsByClassName("tablinks");
-  console.log(tablinks);
   for (i = 0; i < tablinks.length; i++) {
     tablinks[i].className = tablinks[i].className.replace("active", "");
   }

@@ -5,7 +5,7 @@
                 <div class="card">
                     <div class="rounded-top text-white d-flex flex-row bg-secondary py-3 profile-container">
                         <div class="ms-4 mt-5 d-flex flex-column" >
-                            <img id="userProfilePhoto" src="" alt="Profile photo" width="150"
+                            <img id="userProfilePhoto" src="" alt="Profile photo"
                                 class="img-fluid img-thumbnail mt-4 mb-2">
                             <button onclick="openUpdateProfilePhotoModal()" type="button" id="btnOpenUpdateProfilePhoto" class="btn btn-primary" data-mdb-ripple-color="dark">
                                 Edit profile photo
@@ -77,14 +77,18 @@
         <button onclick="closeUpdateProfilePhotoModal()"  type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+      <div id="errorMsg" class="alert alert-danger visually-hidden" role="alert"></div>
       <div class="mb-3">
+        <input type="hidden" id="updateProfilePhotoAccountID"/>
+        <input type="hidden" id="updateProfilePhotoAccountUsername"/>
+        <input type="hidden" id="updateProfilePhotoAccountType"/>
       <label for="updateProfilePhoto" class="form-label">Please choose an image to update your account profile photo</label>
     <input class="form-control" accept="image/png, image/jpeg, image/jpg" type="file" id="updateProfilePhoto">
 </div>
       </div>
       <div class="modal-footer">
         <button onclick="closeUpdateProfilePhotoModal()" type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button onclick="updateProfilePhoto()" type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

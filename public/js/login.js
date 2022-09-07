@@ -30,7 +30,15 @@ function login(accountType, redirectLink) {
                 let { status = 0 } = this;
 
                 if (status == 200) {
-                    localStorage.setItem("customer", this.responseText);
+
+                    if (accountType === "customer") {
+                        localStorage.setItem("customer", this.responseText);
+                    } else if (accountType === "shipper") {
+                        localStorage.setItem("shipper", this.responseText);
+                    } else {
+                        localStorage.setItem("vendor", this.responseText);
+                    }
+
                     window.location.replace(`http://${window.location.host}/${redirectLink}`);
                     return;
                 }
@@ -52,4 +60,3 @@ function login(accountType, redirectLink) {
     }
 
 }
-

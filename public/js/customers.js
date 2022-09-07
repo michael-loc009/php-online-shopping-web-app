@@ -1,4 +1,3 @@
-const host = "http://php-online-shopping-backend.herokuapp.com/api/";
 const maxItemPerPage = 2;
 let currentPage = 1;
 let vendors = [];
@@ -103,7 +102,6 @@ function renderItem(item, index) {
       <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
         <div class="text-end">
           <button onclick="openProductDetails(${ProductID})" type="button" class="btn btn-outline-dark me-2">Details</button>
-          <button onclick="addToCart(${ProductID})" type="button" class="btn btn-success">Add to cart</button>
         </div>
       </div>
     </div>

@@ -1,4 +1,5 @@
-const host = "http://php-online-shopping-backend.herokuapp.com/api/";
+const apiHost = "http://php-online-shopping-backend.herokuapp.com";
+const host = `${apiHost}/api/`;
 
 async function callAPI(method, url, onSuccess = () => {}) {
   const xhttp = new XMLHttpRequest();

@@ -3,16 +3,17 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Vendor</title>
+    <title>Shipper</title>
+        <!-- Favicons -->
+        <link rel="icon" href="../../assets/favicon.ico">
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-    <link rel="stylesheet" href="../css/vendors.css" />
+    <link rel="stylesheet" href="../css/shippers.css" />
   </head>
   <body>
-    <?php include "../template/headers/admin_header.php"; ?>
+    <?php include "../template/headers/shipper_header.php"; ?>
     <div class="container">
       <div class="container px-3 py-3">
-        <p class="h2">Order</p>
+        <p class="h2">Orders</p>
         <table class="table">
           <thead>
             <tr>
@@ -30,7 +31,13 @@
     </div>
 
     <?php include "../template/footers/admin_footer.php"; ?>
-    <script src="../js/orderStatus.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../constant/apiServices.js"></script>
+    <script src="../js/orderStatus.js"></script>
+    <script src="../js/helpers.js"></script>
   </body>
 </html>
+
+<script>
+    window.onload = authenticate("shipper", "shippers");
+</script>

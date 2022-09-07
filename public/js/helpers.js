@@ -25,6 +25,18 @@ function logout(accountType, redirectLink) {
         window.location.replace(`http://${window.location.host}/${redirectLink}/login`);
         return;
     }
+
+    if (accountType == "vendor") {
+        localStorage.removeItem("vendor");
+        window.location.replace(`http://${window.location.host}/${redirectLink}/login`);
+        return;
+    }
+
+    if (accountType == "shipper") {
+        localStorage.removeItem("shipper");
+        window.location.replace(`http://${window.location.host}/${redirectLink}/login`);
+        return;
+    }
 }
 
 function authenticate(accountType, redirectLink) {
@@ -52,6 +64,21 @@ function generateAccountProfile(accountType) {
         let usernameEle = document.getElementById("userProfileUserName");
         usernameEle.innerHTML = userProfile.Username;
 
+        let updateProfilePhotoAccountIDEle = document.getElementById("updateProfilePhotoAccountID");
+        if (accountType === "customer") {
+            updateProfilePhotoAccountIDEle.value = userProfile.CustomerID;
+        } else if (accountType === "shipper") {
+            updateProfilePhotoAccountIDEle.value = userProfile.ShipperID;
+        } else {
+            updateProfilePhotoAccountIDEle.value = userProfile.VendorID;
+        }
+
+        let updateProfilePhotoAccountUsernameEle = document.getElementById("updateProfilePhotoAccountUsername");
+        updateProfilePhotoAccountUsernameEle.value = userProfile.Username;
+
+        let updateProfilePhotoAccountTypeEle = document.getElementById("updateProfilePhotoAccountType");
+        updateProfilePhotoAccountTypeEle.value = accountType;
+
         let htmlProfile = "";
         let userProfileDetailsEle = document.getElementById("userProfileDetails");
         for (const property in userProfile) {
@@ -64,3 +91,10 @@ function generateAccountProfile(accountType) {
     }
 }
 
+function updateProfilePhotoPathForStore(accountType,path){
+    let userProfile = localStorage.getItem(accountType);
+    userProfile = JSON.parse(userProfile);
+    userProfile.ProfilePhoto = path;
+    userProfile = JSON.stringify(userProfile);
+    localStorage.setItem(accountType, userProfile);
+}

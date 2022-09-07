@@ -5,7 +5,6 @@
     </div>    
 
     <div id="errorMsg" class="alert alert-danger visually-hidden" role="alert">
-    A simple danger alert—check it out!
     </div>
 
     <div class="form-floating">
@@ -17,8 +16,4 @@
       <label for="password">Password</label>
     </div>
 
-    <button class="w-100 btn btn-lg btn-primary" onclick='login("customer","customers")'>Sign in</button>
-    
-   <p class="my-4" >Not have an account? <a href="/customers/createAccount">Register</a></p> 
-    <p class="mt-5 mb-3 text-muted"><?php $year = date("Y"); echo "&copy; $year"; ?></p>
-</main>
+

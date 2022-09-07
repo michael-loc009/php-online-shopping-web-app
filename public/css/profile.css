@@ -9,3 +9,8 @@
 #btnOpenUpdateProfilePhoto{
     z-index: 0;
 }
+
+#userProfilePhoto{
+  height: 110px;
+  width: 150px;
+}

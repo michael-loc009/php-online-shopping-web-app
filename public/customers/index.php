@@ -53,6 +53,7 @@
 
     <?php include "../template/footers/admin_footer.php"; ?>
     <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../../constant/apiServices.js"></script>
     <script src="../js/customers.js"></script>
     <script src="../js/cartController.js"></script>
     <script src="../js/helpers.js"></script>
