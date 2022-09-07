@@ -1,5 +1,3 @@
-
-
 function createAccount(e) {
   const host = "https://php-online-shopping-backend.herokuapp.com/api/";
   var pattern = /^[A-Za-z ]{5,}$/i;
@@ -18,7 +16,7 @@ function createAccount(e) {
 
   if (!pattern.test(name)) {
     status = false;
-    error += `Name at least 5 characters <br>`;
+    error += `Name at least 5 characters without special characters<br>`;
     let element = document.getElementById("inputFullName");
     element.classList.add("border-danger");
   } else {

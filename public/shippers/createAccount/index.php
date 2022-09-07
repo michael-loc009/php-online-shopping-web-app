@@ -16,8 +16,7 @@
           <div class="mb-3 row">
             <div class="col">
               <label class="form-label">Distribution Hub (*)</label>
-              <select class="form-select" id="list_option">
-              </select>
+              <select class="form-select" id="list_option"></select>
             </div>
             <div class="col">
               <label class="form-label">User Name (*)</label>
@@ -45,7 +44,7 @@
             </div>
           </div>
           <div class="mb-3">
-            <label class="form-label">Profile Image (*)</label>
+            <label class="form-label">Profile Image</label>
             <input
               type="file"
               class="form-control"

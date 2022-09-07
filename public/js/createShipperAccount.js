@@ -86,7 +86,7 @@ function createAccount() {
           }
           if (res.status) {
             document.getElementById("error").innerHTML = "";
-            alert("Create success");
+            window.location.replace(`http://${window.location.host}/shippers/login`);
           }
         }
       };

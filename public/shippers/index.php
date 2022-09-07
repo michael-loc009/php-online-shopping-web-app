@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Shipper</title>
-        <!-- Favicons -->
-        <link rel="icon" href="../../assets/favicon.ico">
+    <!-- Favicons -->
+    <link rel="icon" href="../../assets/favicon.ico" />
     <link href="../css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/shippers.css" />
   </head>
@@ -23,9 +23,7 @@
               <th scope="col">Action</th>
             </tr>
           </thead>
-          <tbody id="list-item">
-        
-          </tbody>
+          <tbody id="list-item"></tbody>
         </table>
       </div>
     </div>
@@ -35,9 +33,8 @@
     <script src="../constant/apiServices.js"></script>
     <script src="../js/shipper.js"></script>
     <script src="../js/helpers.js"></script>
+    <script>
+      window.onload = authenticate("shipper", "shippers");
+    </script>
   </body>
 </html>
-
-<script>
-    window.onload = authenticate("shipper", "shippers");
-</script>

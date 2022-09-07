@@ -12,7 +12,7 @@
                             </button>
                         </div>
                         <div class="ms-4 mx-5 profile-photo">
-                            <h5 id="userProfileUserName"></h5>
+                            <h5 id="userProfileUserName">&nbsp;</h5>
                         </div>
                     </div>
                     <div class="p-4 text-black">

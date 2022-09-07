@@ -62,7 +62,7 @@
             />
           </div>
           <div class="mb-3">
-            <label class="form-label">Profile Image (*)</label>
+            <label class="form-label">Profile Image</label>
             <input
               type="file"
               class="form-control"
@@ -83,7 +83,7 @@
     </div>
     <script src="../../constant/apiServices.js"></script>
     <script src="../../css/bootstrap.bundle.min.js"></script>
-    <script src="../../css/createCustomerAccount.js"></script>
+    <script src="../../js/createCustomerAccount.js"></script>
 
   </body>
 </html>

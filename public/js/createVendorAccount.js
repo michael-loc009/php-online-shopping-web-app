@@ -1,4 +1,3 @@
-
 function createAccount(e) {
   const host = "https://php-online-shopping-backend.herokuapp.com/api/";
   var pattern = /^[a-zA-Z0-9_ ]{5,}$/i;
@@ -17,7 +16,7 @@ function createAccount(e) {
 
   if (!pattern.test(removeDuplicateSpace(name))) {
     status = false;
-    error += `Name at least 5 characters <br>`;
+    error += `Name at least 5 characters and without special characters<br>`;
     let element = document.getElementById("inputBusinessName");
     element.classList.add("border-danger");
   } else {
@@ -64,9 +63,18 @@ function createAccount(e) {
     let element = document.getElementById("inputAddress");
     element.classList.add("border-danger");
     status = false;
-    error += `Adress less than 5 characters`;
+    error += `Adress less than 5 characters and without special charactor`;
   } else {
     let element = document.getElementById("inputAddress");
+    element.classList.remove("border-danger");
+  }
+
+  if (!file.files[0]) {
+    let element = document.getElementById("inputGetFile");
+    error += `Image is required`;
+    element.classList.add("border-danger");
+  } else {
+    let element = document.getElementById("inputGetFile");
     element.classList.remove("border-danger");
   }
 
@@ -74,7 +82,7 @@ function createAccount(e) {
     document.getElementById("error").innerHTML = error;
   } else {
     try {
-      var xhr = createCORSRequest("post", `${host}product`);
+      var xhr = createCORSRequest("post", `${host}vendor`);
       xhr.addEventListener(
         "progress",
         function (e) {
@@ -106,12 +114,12 @@ function createAccount(e) {
         if (4 == this.readyState) {
           console.log(["xhr upload complete----", this.responseText]);
           const res = JSON.parse(this.responseText);
-          if (res.code === 9) {
+          if (res.code === 13) {
             document.getElementById("error").innerHTML = res.message;
           }
           if (res.status) {
             document.getElementById("error").innerHTML = "";
-            alert("Create success");
+            window.location.replace(`http://${window.location.host}/vendors/login`);
           }
         }
       };
@@ -120,9 +128,7 @@ function createAccount(e) {
       formData.append("Password", pw);
       formData.append("BusinessName", name);
       formData.append("BusinessAddress", address);
-      if (file.files[0]) {
-        formData.append("ProfilePhoto", file.files[0]);
-      }
+      formData.append("ProfilePhoto", file.files[0]);
       xhr.send(formData);
     } catch (error) {
       console.log(error.message);
