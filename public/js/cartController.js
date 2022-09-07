@@ -27,10 +27,25 @@ function closeCart() {
   modal.style.display = "none";
 }
 
+function getLoginedUser() {
+  const loginedUser = localStorage.getItem("customer");
+  if (loginedUser) {
+    return JSON.parse(loginedUser);
+  }
+  return null;
+}
+
 function getCart() {
   const localCart = localStorage.getItem("cart");
-  if (localCart) {
-    return JSON.parse(localCart);
+  const user = getLoginedUser();
+  if (localCart && user) {
+    const cart = JSON.parse(localCart);
+    const { Username } = user;
+    const cartByUsername = cart[Username];
+    if (cartByUsername) {
+      return cartByUsername;
+    }
+    return [];
   }
   return [];
 }
@@ -193,8 +208,9 @@ function checkoutSuccess() {
 async function checkout() {
   const cart = getCart();
   const cartTotal = getCartTotal(cart);
+  const user = getLoginedUser();
   const body = {
-    CustomerID: 5,
+    CustomerID: user.CustomerID,
     Total: cartTotal,
     OrderItems: cart.map((cartItem) => {
       return {
@@ -204,13 +220,13 @@ async function checkout() {
     }),
   };
 
-  const http = new XMLHttpRequest();
-  http.open("POST", "/api/order");
-  http.setRequestHeader("Content-type", "application/json");
+  let url = `http://php-online-shopping-backend.herokuapp.com//api/api/order`;
+  let http = createCORSRequest("post", url);
+  http.open("POST", url);
   http.send(JSON.stringify(body)); // Make sure to stringify
   http.onload = function (response) {
     // Do whatever with response
-    if (http.status === 200) {
+    if (http.status === 201) {
       checkoutSuccess();
     }
   };

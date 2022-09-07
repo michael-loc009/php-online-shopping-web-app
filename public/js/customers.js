@@ -42,7 +42,7 @@ function renderItemDetails(item) {
               </div>
               <p class="about">${Description}</p>
              
-              <div class="cart mt-4 align-items-center"> <button onclick="addToCart(${ProductID})" class="btn btn-success text-uppercase mr-2 px-4">Add to cart</button> <i class="fa fa-heart text-muted"></i> <i class="fa fa-share-alt text-muted"></i> </div>
+              <div class="cart mt-4 align-items-center"> <button onclick="addToCart(${ProductID})" class="btn btn-success text-uppercase mr-2 px-4">Add to cart</button> </div>
           </div>
       </div>
   </div>
@@ -92,7 +92,7 @@ function renderItem(item, index) {
     <div class="card-body">
     <div class="d-flex justify-content-between align-items-center">
     <p>${Name}</p>
-    <p>${Price}</p>
+    <p>$${Price}</p>
     </div>
       <p class="card-text vendor-description">Description: ${Description}</p>
       <div class="d-flex justify-content-between align-items-center">
@@ -127,17 +127,43 @@ function renderList(list) {
   }
 }
 
+function getLoginedUser() {
+  const loginedUser = localStorage.getItem("customer");
+  if (loginedUser) {
+    return JSON.parse(loginedUser);
+  }
+  return null;
+}
+
 function getCart() {
   const localCart = localStorage.getItem("cart");
-  if (localCart) {
-    return JSON.parse(localCart);
+  const user = getLoginedUser();
+  if (localCart && user) {
+    const cart = JSON.parse(localCart);
+    const { Username } = user;
+    const cartByUsername = cart[Username];
+    if (cartByUsername) {
+      return cartByUsername;
+    }
+    return [];
   }
   return [];
 }
 
-function saveCartToLocalStorage(cart) {
-  const stringtifiedCart = JSON.stringify(cart);
-  localStorage.setItem("cart", stringtifiedCart);
+function saveCartToLocalStorage(currentCart) {
+  const localCart = localStorage.getItem("cart");
+  const loginedUser = localStorage.getItem("customer");
+  if (loginedUser) {
+    const user = JSON.parse(loginedUser);
+    const { Username } = user;
+    let cart = {};
+    if (localCart) {
+      cart = JSON.parse(localCart);
+    }
+    cart[Username] = currentCart;
+    const stringtifiedCart = JSON.stringify(cart);
+    localStorage.setItem("cart", stringtifiedCart);
+  }
 }
 
 function addToCart(id) {

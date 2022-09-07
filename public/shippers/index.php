@@ -33,7 +33,7 @@
     <?php include "../template/footers/admin_footer.php"; ?>
     <script src="../js/bootstrap.bundle.min.js"></script>
     <script src="../constant/apiServices.js"></script>
-    <script src="../js/orderStatus.js"></script>
+    <script src="../js/shipper.js"></script>
     <script src="../js/helpers.js"></script>
   </body>
 </html>
