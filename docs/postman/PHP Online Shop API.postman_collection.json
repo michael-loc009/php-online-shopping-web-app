@@ -253,7 +253,7 @@
 							"key": "ProfilePhoto",
 							"description": "optional",
 							"type": "file",
-							"src": "/C:/Users/DEEL/OneDrive/Documents/1988044-Nguyen_Dinh_Loc-QLHS-4/MEDIA/hoc_sinh_19.png"
+							"src": "/C:/Users/DEEL/OneDrive/Documents/Assignment/Software Development/1988044-Nguyen_Dinh_Loc-QLNV-4/Dich_vu_Du_lieu/Media/NV_1.png"
 						},
 						{
 							"key": "Username",
@@ -926,137 +926,6 @@
 							"type": "file",
 							"src": "/C:/Users/DEEL/OneDrive/Documents/1988044-Nguyen_Dinh_Loc-QLHS-4/MEDIA/hoc_sinh_19.png",
 							"disabled": true
-						}
-					]
-				},
-				"url": {
-					"raw": "{{host}}/api/customer",
-					"host": [
-						"{{host}}"
-					],
-					"path": [
-						"api",
-						"customer"
-					]
-				}
-			},
-			"response": [
-				{
-					"name": "Add Customer",
-					"originalRequest": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "formdata",
-							"formdata": [
-								{
-									"key": "Username",
-									"value": "michaelloc009",
-									"type": "text"
-								},
-								{
-									"key": "Password",
-									"value": "P@ssword123",
-									"type": "text"
-								},
-								{
-									"key": "Name",
-									"value": "Nguyen Dinh Loc",
-									"type": "text"
-								},
-								{
-									"key": "Address",
-									"value": "167 Duong so 1 phuong 13 quan Go Vap",
-									"type": "text"
-								},
-								{
-									"key": "ProfilePhoto",
-									"type": "file",
-									"src": [],
-									"disabled": true
-								}
-							]
-						},
-						"url": {
-							"raw": "{{host}}/api/customer",
-							"host": [
-								"{{host}}"
-							],
-							"path": [
-								"api",
-								"customer"
-							]
-						}
-					},
-					"status": "Created",
-					"code": 201,
-					"_postman_previewlanguage": "json",
-					"header": [
-						{
-							"key": "Connection",
-							"value": "keep-alive"
-						},
-						{
-							"key": "Date",
-							"value": "Fri, 02 Sep 2022 09:25:58 GMT"
-						},
-						{
-							"key": "Server",
-							"value": "Apache"
-						},
-						{
-							"key": "Access-Control-Allow-Origin",
-							"value": "*"
-						},
-						{
-							"key": "Access-Control-Allow-Methods",
-							"value": "OPTIONS,GET,POST,PUT,DELETE"
-						},
-						{
-							"key": "Access-Control-Max-Age",
-							"value": "3600"
-						},
-						{
-							"key": "Access-Control-Allow-Headers",
-							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
-						},
-						{
-							"key": "Transfer-Encoding",
-							"value": "chunked"
-						},
-						{
-							"key": "Content-Type",
-							"value": "application/json; charset=UTF-8"
-						},
-						{
-							"key": "Via",
-							"value": "1.1 vegur"
-						}
-					],
-					"cookie": [],
-					"body": "{\n    \"status\": true\n}"
-				}
-			]
-		},
-		{
-			"name": "Update Customer Profile Photo",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"body": {
-					"mode": "formdata",
-					"formdata": [
-						{
-							"key": "CustomerID",
-							"value": "5",
-							"description": "required",
-							"type": "text"
-						},
-						{
-							"key": "ProfilePhoto",
-							"description": "optional",
-							"type": "file",
-							"src": "/C:/Users/DEEL/OneDrive/Documents/1988044-Nguyen_Dinh_Loc-QLHS-4/MEDIA/hoc_sinh_19.png"
 						}
 					]
 				},
@@ -2274,7 +2143,7 @@
 		{
 			"name": "Update Order Status",
 			"request": {
-				"method": "PUT",
+				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -2286,13 +2155,13 @@
 					}
 				},
 				"url": {
-					"raw": "{{host}}/api/order",
+					"raw": "{{host}}/api/orderStatus",
 					"host": [
 						"{{host}}"
 					],
 					"path": [
 						"api",
-						"order"
+						"orderStatus"
 					]
 				}
 			},

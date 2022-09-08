@@ -29,9 +29,6 @@ class OrderController
             case 'DELETE';
                 $response = $this->deleteOrder();
                 break;
-            case 'PUT';
-                $response = $this->updateOrder();
-                break;
             default:
                 $response = notFoundResponse();
                 break;
@@ -102,30 +99,7 @@ class OrderController
         return $response;
     }
 
-    private function updateOrder()
-    {
-        global $BAD_REQUEST_STATUS_CODE, $SUCCESS_STATUS_CODE;
-        $input = json_decode(file_get_contents('php://input'), true);
 
-        $error = $this->validateOrderID($input);
-        if ($error != "") {
-            $response['status_code_header'] = $BAD_REQUEST_STATUS_CODE;
-            $response['body'] = json_encode($error);
-            return $response;
-        }
-
-        $error = $this->validateOrderStatusID($input);
-        if ($error != "") {
-            $response['status_code_header'] = $BAD_REQUEST_STATUS_CODE;
-            $response['body'] = json_encode($error);
-            return $response;
-        }
-
-        $result = $this->OrderModel->updateOrderStatus($input["OrderID"], $input["OrderStatusID"]);
-        $response['status_code_header'] = $SUCCESS_STATUS_CODE;
-        $response['body'] = json_encode(defaultSuccessResponse());
-        return $response;
-    }
 
     private function validateCreateOrderInputs($input)
     {
