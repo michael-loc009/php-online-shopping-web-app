@@ -65,9 +65,9 @@ async function updateStatus(orderID, statusID) {
     "OrderStatusID": statusID,
   };
 
-  let url = `http://php-online-shopping-backend.herokuapp.com/api/order`;
-  let http = createCORSRequest("put", url);
-  http.open("put", url);
+  let url = `http://php-online-shopping-backend.herokuapp.com/api/orderStatus`;
+  let http = createCORSRequest("post", url);
+  http.open("post", url);
   http.send(JSON.stringify(body)); // Make sure to stringify
   http.onload = function (response) {
 
