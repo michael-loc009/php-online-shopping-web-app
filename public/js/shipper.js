@@ -15,7 +15,6 @@ async function callAPI(method, url, onSuccess) {
 }
 
 function renderItemDetails(item) {
-  console.log(item);
   let htmlProfile = "";
   let orderDetailsHTML = "";
   for (let itemDetails of item.OrderDetails) {
@@ -61,19 +60,18 @@ function openOrderDetails(id) {
 }
 
 async function updateStatus(orderID, statusID) {
-  const body = {
-    OrderID: orderID,
-    OrderStatusID: statusID,
+  let body = {
+    "OrderID": orderID,
+    "OrderStatusID": statusID,
   };
 
-  let url = `http://php-online-shopping-backend.herokuapp.com//api/api/order`;
-  let http = createCORSRequest("PUT", url);
-  http.open("PUT", url);
+  let url = `http://php-online-shopping-backend.herokuapp.com/api/order`;
+  let http = createCORSRequest("put", url);
+  http.open("put", url);
   http.send(JSON.stringify(body)); // Make sure to stringify
   http.onload = function (response) {
-    // Do whatever with response
-    console.log(response, http);
-    if (http.status === 201) {
+
+    if (http.status === 200) {
       //re-render list
       getOrdersByDistributionHubID();
     } else {
@@ -139,7 +137,6 @@ function renderList(list) {
 async function getOrderStatus() {
   const onSuccess = (response) => {
     if (Array.isArray(response)) {
-      console.log(response);
       orderStatus = response;
       getOrdersByDistributionHubID();
     }
@@ -161,7 +158,6 @@ async function getOrdersByDistributionHubID() {
     const { DistributionHubID } = shipper;
     const onSuccess = (response) => {
       if (Array.isArray(response)) {
-        console.log(response);
         orders = response;
         renderList(response);
       }
