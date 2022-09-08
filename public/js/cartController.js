@@ -205,6 +205,55 @@ function checkoutSuccess() {
   closeCart();
 }
 
+function addToCart(id) {
+  const item = vendors.find((item) => item.ProductID == id);
+  const cart = getCart();
+  if (item) {
+    const itemIndex = cart.findIndex(
+      (cartItem) => cartItem.item.ProductID == item.ProductID
+    );
+    // Already have item in cart
+    if (itemIndex > -1) {
+      cart[itemIndex].quantity += 1;
+    }
+    // This item havent been in cart
+    else {
+      cart.push({
+        item,
+        quantity: 1,
+      });
+    }
+    saveCartToLocalStorage(cart);
+    renderCartQuantity(cart);
+    onCloseProductDetailsModal();
+  }
+}
+
+function saveCartToLocalStorage(currentCart) {
+  const localCart = localStorage.getItem("cart");
+  const loginedUser = localStorage.getItem("customer");
+  if (loginedUser) {
+    const user = JSON.parse(loginedUser);
+    const { Username } = user;
+    let cart = {};
+    if (localCart) {
+      cart = JSON.parse(localCart);
+    }
+    cart[Username] = currentCart;
+    const stringtifiedCart = JSON.stringify(cart);
+    localStorage.setItem("cart", stringtifiedCart);
+  }
+}
+
+function renderCartQuantity(list) {
+  let quantity = 0;
+  for (let cartItem of list) {
+    quantity += cartItem.quantity;
+  }
+  const html = `(${quantity})`;
+  document.getElementById("cart-quantity").innerHTML = html;
+}
+
 async function checkout() {
   const cart = getCart();
   const cartTotal = getCartTotal(cart);
@@ -228,6 +277,8 @@ async function checkout() {
     // Do whatever with response
     if (http.status === 201) {
       checkoutSuccess();
+    } else {
+      alert("There is something wrong when checkout! Please try again");
     }
   };
 }
