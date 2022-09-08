@@ -1,0 +1,2241 @@
+{
+	"info": {
+		"_postman_id": "89b943f3-bac1-4d57-8647-fbbbf83bbe89",
+		"name": "PHP Online Shop API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "10595575"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"Username\": \"luckystar135\",\r\n    \"Password\": \"P@ssword123\",\r\n    \"Type\": \"customer\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/login",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Login for shipper",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\": \"michalloc009\",\r\n    \"Password\": \"P@ssword123\",\r\n    \"Type\": \"shipper\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 06 Sep 2022 15:07:15 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, Accept, Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, X-Auth-Token"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Username\": \"michalloc009\",\n    \"ShipperID\": 1,\n    \"ProfilePhoto\": \"http://php-online-shopping-backend.herokuapp.com/assets/shippers/default_avatar.jpg\",\n    \"UpdatedAt\": \"2022-09-04T09:18:44Z\",\n    \"CreatedAt\": \"2022-09-04T09:18:44Z\",\n    \"DistributionHubID\": 1\n}"
+				},
+				{
+					"name": "Login for vendor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\": \"sonystore\",\r\n    \"Password\": \"P@ssword123\",\r\n    \"Type\": \"vendor\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 06 Sep 2022 15:07:38 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, Accept, Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, X-Auth-Token"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Username\": \"sonystore\",\n    \"VendorID\": 1,\n    \"BusinessName\": \"Sony Inc\",\n    \"ProfilePhoto\": \"http://php-online-shopping-backend.herokuapp.com/assets/vendors/sonystore/sony_vendor.png\",\n    \"UpdatedAt\": \"2022-09-04T09:18:26Z\",\n    \"CreatedAt\": \"2022-09-04T09:18:26Z\",\n    \"BusinessAddress\": \"167 Duong so 1 phuong 13 quan Go Vap\"\n}"
+				},
+				{
+					"name": "Login for customer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Username\": \"luckystar135\",\r\n    \"Password\": \"P@ssword123\",\r\n    \"Type\": \"customer\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/login",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 06 Sep 2022 15:07:56 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, Accept, Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, X-Auth-Token"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"Username\": \"luckystar135\",\n    \"CustomerID\": 5,\n    \"Name\": \"Nguyen Van Tai\",\n    \"ProfilePhoto\": \"http://php-online-shopping-backend.herokuapp.com/assets/customers/default_avatar.jpg\",\n    \"UpdatedAt\": \"2022-09-04T09:17:56Z\",\n    \"CreatedAt\": \"2022-09-04T09:17:56Z\",\n    \"Address\": \"167 Duong so 1 phuong 13 quan Go Vap\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Profile Photo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "ProfilePhoto",
+							"description": "optional",
+							"type": "file",
+							"src": "/C:/Users/DEEL/OneDrive/Documents/Assignment/Software Development/1988044-Nguyen_Dinh_Loc-QLNV-4/Dich_vu_Du_lieu/Media/NV_1.png"
+						},
+						{
+							"key": "Username",
+							"value": "luckystar135",
+							"type": "text"
+						},
+						{
+							"key": "Type",
+							"value": "customer",
+							"type": "text"
+						},
+						{
+							"key": "CustomerID",
+							"value": "5",
+							"type": "text"
+						},
+						{
+							"key": "ShipperID",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "VendorID",
+							"value": "1",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/profile-photo",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"profile-photo"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Profile Photo",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "ProfilePhoto",
+									"description": "optional",
+									"type": "file",
+									"src": "/C:/Users/DEEL/OneDrive/Documents/Online Shop/iphone13.jpg"
+								},
+								{
+									"key": "Username",
+									"value": "luckystar135",
+									"type": "text"
+								},
+								{
+									"key": "Type",
+									"value": "customer",
+									"type": "text"
+								},
+								{
+									"key": "CustomerID",
+									"value": "5",
+									"type": "text"
+								},
+								{
+									"key": "ShipperID",
+									"value": "1",
+									"type": "text"
+								},
+								{
+									"key": "VendorID",
+									"value": "1",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/profile-photo",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"profile-photo"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 06 Sep 2022 16:31:23 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Origin, Accept, Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, X-Auth-Token"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Order Status",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/orderStatus",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"orderStatus"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Order Status",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/orderStatus",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"orderStatus"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Sep 2022 11:19:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"OrderStatusID\": 1,\n        \"Label\": \"active\"\n    },\n    {\n        \"OrderStatusID\": 2,\n        \"Label\": \"delivered\"\n    },\n    {\n        \"OrderStatusID\": 3,\n        \"Label\": \"canceled\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Get Distribution Hub",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/distributionHub",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"distributionHub"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Distribution Hub",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/distributionHub",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"distributionHub"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Sep 2022 11:19:31 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"DistributionHubID\": 1,\n        \"Name\": \"LAX Express\",\n        \"Address\": \"67 Lê Lợi, Phường Bến Nghé, Quận 1, Tp. Hồ Chí Minh, Việt Nam\"\n    },\n    {\n        \"DistributionHubID\": 2,\n        \"Name\": \"LALA MOVE\",\n        \"Address\": \"146 Lý Thường Kiệt phường 12 quận Tân Bình tp Hồ Chí Minh Việt Nam\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Add Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Name",
+							"value": "Motobike Super",
+							"description": "Required, 10 to 20 characters, Unique",
+							"type": "text"
+						},
+						{
+							"key": "Description",
+							"value": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+							"description": "No more than 500 characters",
+							"type": "text"
+						},
+						{
+							"key": "Price",
+							"value": "30000",
+							"description": "greater than zero",
+							"type": "text"
+						},
+						{
+							"key": "ProductPhoto",
+							"description": "required",
+							"type": "file",
+							"src": "/C:/Users/DEEL/OneDrive/Documents/Online Shop/bike.jpg"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/product",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Product",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Name",
+									"value": "test1",
+									"type": "text"
+								},
+								{
+									"key": "Description",
+									"value": "lalala",
+									"type": "text"
+								},
+								{
+									"key": "Price",
+									"value": "10.2",
+									"type": "text"
+								},
+								{
+									"key": "ProductPhoto",
+									"type": "file",
+									"src": "/C:/Users/DEEL/OneDrive/Documents/Assignment/Software Development/1988044-Nguyen_Dinh_Loc-QLNV-4/Dich_vu_Du_lieu/Media/NV_2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/product",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Sep 2022 05:16:07 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/product",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Products",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Name",
+									"value": "test1",
+									"type": "text"
+								},
+								{
+									"key": "Description",
+									"value": "lalala",
+									"type": "text"
+								},
+								{
+									"key": "Price",
+									"value": "10.2",
+									"type": "text"
+								},
+								{
+									"key": "ProductPhoto",
+									"type": "file",
+									"src": "/C:/Users/DEEL/OneDrive/Documents/Assignment/Software Development/1988044-Nguyen_Dinh_Loc-QLNV-4/Dich_vu_Du_lieu/Media/NV_2.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/product",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Sep 2022 13:40:03 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"ProductID\": 14,\n        \"Name\": \"Playstation 5\",\n        \"ImagePath\": \"http://127.0.0.1/assets/products/Playstation 5/playstation_5.jpg\",\n        \"UpdatedAt\": \"2022-09-01T13:37:46Z\",\n        \"CreatedAt\": \"2022-09-01T13:37:46Z\",\n        \"Price\": 399.99,\n        \"Description\": \"The PS5 console unleashes new gaming possibilities that you never anticipated. Experience lightning fast loading with an ultra-high speed SSD, deeper immersion with support for haptic feedback, adaptive triggers, and 3D Audio*, and an all-new generation of incredible PlayStation games. *3D audio via built-in TV speakers or analog/USB stereo headphones. Set up and latest system software update required.\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete Product",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ProductID\": 14\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/product",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"product"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Product",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ProductID\": 14\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/product",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"product"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 01 Sep 2022 13:41:09 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "luckystar135",
+							"description": "required, contains only letters and numbers, 8 to 15 characters , unique",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "P@ssword123",
+							"description": "required, contains at least one upper case letter, one lower case letter, one digit and one special characters, 8 to 20 characters ",
+							"type": "text"
+						},
+						{
+							"key": "Name",
+							"value": "Nguyen Van Tai",
+							"description": "at least 5 characters",
+							"type": "text"
+						},
+						{
+							"key": "Address",
+							"value": "167 Duong so 1 phuong 13 quan Go Vap",
+							"description": "at least 5 characters",
+							"type": "text"
+						},
+						{
+							"key": "ProfilePhoto",
+							"description": "optional",
+							"type": "file",
+							"src": "/C:/Users/DEEL/OneDrive/Documents/1988044-Nguyen_Dinh_Loc-QLHS-4/MEDIA/hoc_sinh_19.png",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/customer",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Customer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Username",
+									"value": "michaelloc009",
+									"type": "text"
+								},
+								{
+									"key": "Password",
+									"value": "P@ssword123",
+									"type": "text"
+								},
+								{
+									"key": "Name",
+									"value": "Nguyen Dinh Loc",
+									"type": "text"
+								},
+								{
+									"key": "Address",
+									"value": "167 Duong so 1 phuong 13 quan Go Vap",
+									"type": "text"
+								},
+								{
+									"key": "ProfilePhoto",
+									"type": "file",
+									"src": [],
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/customer",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"customer"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Sep 2022 09:25:58 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "Apache"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Via",
+							"value": "1.1 vegur"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Customers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/customer",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Customers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/customer",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"customer"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Sep 2022 09:22:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"CustomerID\": 3,\n        \"Username\": \"michaelloc009\",\n        \"Name\": \"Playstation 5\",\n        \"ProfilePhoto\": \"http://127.0.0.1/assets/customers/michaelloc009/playstation_5.jpg\",\n        \"UpdatedAt\": \"2022-09-02T09:21:34Z\",\n        \"CreatedAt\": \"2022-09-02T09:21:34Z\",\n        \"Address\": \"399.99\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete Customer",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CustomerID\": 4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/customer",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Customer",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"CustomerID\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/customer",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"customer"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Sep 2022 09:18:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Vendor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "luckystar135",
+							"description": "required, contains only letters and numbers, 8 to 15 characters , unique",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "P@ssword123",
+							"description": "required, contains at least one upper case letter, one lower case letter, one digit and one special characters, 8 to 20 characters ",
+							"type": "text"
+						},
+						{
+							"key": "BusinessName",
+							"value": "Sony Inc",
+							"description": "at least 5 characters, unique",
+							"type": "text"
+						},
+						{
+							"key": "BusinessAddress",
+							"value": "167 Duong so 1 phuong 13 quan Go Vap",
+							"description": "at least 5 characters,unique",
+							"type": "text"
+						},
+						{
+							"key": "ProfilePhoto",
+							"description": "optional",
+							"type": "file",
+							"src": "/C:/Users/DEEL/OneDrive/Documents/Online Shop/sony_vendor.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/vendor",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"vendor"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Vendor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Username",
+									"value": "luckystar1356",
+									"description": "required, contains only letters and numbers, 8 to 15 characters , unique",
+									"type": "text"
+								},
+								{
+									"key": "Password",
+									"value": "P@ssword123",
+									"description": "required, contains at least one upper case letter, one lower case letter, one digit and one special characters, 8 to 20 characters ",
+									"type": "text"
+								},
+								{
+									"key": "BusinessName",
+									"value": "Sony Incb",
+									"description": "at least 5 characters, unique",
+									"type": "text"
+								},
+								{
+									"key": "BusinessAddress",
+									"value": "167 Duong so 1 phuong 13 quan Go Vapf",
+									"description": "at least 5 characters,unique",
+									"type": "text"
+								},
+								{
+									"key": "ProfilePhoto",
+									"description": "optional",
+									"type": "file",
+									"src": "/C:/Users/DEEL/OneDrive/Documents/Online Shop/sony_vendor.png",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/vendor",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"vendor"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Sep 2022 10:48:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Vendors",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/customer",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"customer"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Vendors",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/vendors",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"vendors"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Sep 2022 10:48:46 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"VendorID\": 1,\n        \"Username\": \"luckystar1356\",\n        \"BusinessName\": \"Sony Incb\",\n        \"ProfilePhoto\": \"http://127.0.0.1/assets/vendors/default_avatar.jpg\",\n        \"UpdatedAt\": \"2022-09-02T10:48:14Z\",\n        \"CreatedAt\": \"2022-09-02T10:48:14Z\",\n        \"BusinessAddress\": \"167 Duong so 1 phuong 13 quan Go Vapf\"\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete Vendor",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"VendorID\": 1\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/vendor",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"vendor"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Vendor",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"VendorID\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/vendor",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"vendor"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Sep 2022 10:50:05 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Shipper",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "Username",
+							"value": "luckystar135",
+							"description": "required, contains only letters and numbers, 8 to 15 characters , unique",
+							"type": "text"
+						},
+						{
+							"key": "Password",
+							"value": "P@ssword123",
+							"description": "required, contains at least one upper case letter, one lower case letter, one digit and one special characters, 8 to 20 characters ",
+							"type": "text"
+						},
+						{
+							"key": "DistributionHubID",
+							"value": "5",
+							"description": "required",
+							"type": "text"
+						},
+						{
+							"key": "ProfilePhoto",
+							"description": "optional",
+							"type": "file",
+							"src": "/C:/Users/DEEL/OneDrive/Documents/1988044-Nguyen_Dinh_Loc-QLHS-4/MEDIA/hoc_sinh_19.png",
+							"disabled": true
+						}
+					]
+				},
+				"url": {
+					"raw": "{{host}}/api/shipper",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"shipper"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Shipper",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "Username",
+									"value": "luckystar135",
+									"description": "required, contains only letters and numbers, 8 to 15 characters , unique",
+									"type": "text"
+								},
+								{
+									"key": "Password",
+									"value": "P@ssword123",
+									"description": "required, contains at least one upper case letter, one lower case letter, one digit and one special characters, 8 to 20 characters ",
+									"type": "text"
+								},
+								{
+									"key": "DistributionHubID",
+									"value": "5",
+									"description": "required",
+									"type": "text"
+								},
+								{
+									"key": "ProfilePhoto",
+									"description": "optional",
+									"type": "file",
+									"src": "/C:/Users/DEEL/OneDrive/Documents/1988044-Nguyen_Dinh_Loc-QLHS-4/MEDIA/hoc_sinh_19.png",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "{{host}}/api/shipper",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"shipper"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Sep 2022 15:03:26 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Shippers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/shipper",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"shipper"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Shippers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/shipper",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"shipper"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Sep 2022 15:04:27 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"ShipperID\": 1,\n        \"Username\": \"luckystar135\",\n        \"UpdatedAt\": \"2022-09-02T15:03:26Z\",\n        \"CreatedAt\": \"2022-09-02T15:03:26Z\",\n        \"DistributionHubID\": 5\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete Shipper",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"ShipperID\": 3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/shipper",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"shipper"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Shipper",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ShipperID\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/shipper",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"shipper"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 02 Sep 2022 15:08:07 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Add Order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"CustomerID\": 5,\r\n    \"Total\": 399.99,\r\n    \"OrderItems\": [\r\n        {\r\n            \"ProductID\": 16,\r\n            \"Quantity\": 1\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/order",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Add Order",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"CustomerID\": 5,\r\n    \"Total\": 800,\r\n    \"OrderItems\": [\r\n        {\r\n            \"ProductID\": 14,\r\n            \"Quantity\": 1\r\n        },\r\n            {\r\n            \"ProductID\": 15,\r\n            \"Quantity\": 1\r\n        }\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/order",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 03 Sep 2022 08:44:48 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Get Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/order?DistributionHubID=1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"order"
+					],
+					"query": [
+						{
+							"key": "DistributionHubID",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get Orders",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/order?DistributionHubID=1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"order"
+							],
+							"query": [
+								{
+									"key": "DistributionHubID",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 03 Sep 2022 09:35:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"OrderID\": 5,\n        \"CustomerID\": 5,\n        \"UpdatedAt\": \"2022-09-03T09:34:57Z\",\n        \"CreatedAt\": \"2022-09-03T09:34:57Z\",\n        \"Status\": 1,\n        \"StatusLabel\": \"active\",\n        \"DistributionHubID\": 1,\n        \"DistributionHubName\": \"LAX Express\",\n        \"DistributionHubAddress\": \"67 Lê Lợi, Phường Bến Nghé, Quận 1, Tp. Hồ Chí Minh, Việt Nam\",\n        \"Total\": 399.99,\n        \"OrderDetails\": [\n            \"[{\\\"ProductID\\\":16,\\\"Name\\\":\\\"Playstation 5\\\",\\\"ImagePath\\\":\\\"http://127.0.0.1/assets/products/Playstation 5/playstation_5.jpg\\\",\\\"Price\\\":399.99,\\\"Quantity\\\":1}]\"\n        ]\n    }\n]"
+				}
+			]
+		},
+		{
+			"name": "Delete Order",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"OrderID\": 5\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/order",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"order"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Delete Order",
+					"originalRequest": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"OrderID\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/order",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 03 Sep 2022 09:12:58 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true\n}"
+				}
+			]
+		},
+		{
+			"name": "Update Order Status",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"OrderID\": 6,\r\n    \"OrderStatusID\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/orderStatus",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"orderStatus"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Update Order Status",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"OrderID\": 6,\r\n    \"OrderStatusID\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/order",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"order"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Host",
+							"value": "127.0.0.1:8000"
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 03 Sep 2022 09:45:24 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						},
+						{
+							"key": "X-Powered-By",
+							"value": "PHP/7.3.21"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=UTF-8"
+						},
+						{
+							"key": "Access-Control-Allow-Methods",
+							"value": "OPTIONS,GET,POST,PUT,DELETE"
+						},
+						{
+							"key": "Access-Control-Max-Age",
+							"value": "3600"
+						},
+						{
+							"key": "Access-Control-Allow-Headers",
+							"value": "Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": true\n}"
+				}
+			]
+		}
+	]
+}
