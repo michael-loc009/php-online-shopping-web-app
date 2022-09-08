@@ -1,0 +1,16 @@
+.profile-photo {
+  margin-top: 130px;
+}
+
+.profile-container{
+    height:200px;
+}
+
+#btnOpenUpdateProfilePhoto{
+    z-index: 0;
+}
+
+#userProfilePhoto{
+  height: 110px;
+  width: 150px;
+}

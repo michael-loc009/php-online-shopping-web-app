@@ -4,28 +4,22 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>PHP Online Shopping Project</title>
-    <link href="../../css/bootstrap.min.css" rel="stylesheet">
-      <link rel="stylesheet" href="../../css/vendors.css">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../../css/vendors.css" />
   </head>
   <body>
     <div class="container">
       <div class="container">
         <div class="container border px-3 py-3">
-          <p class="h1 text-center">CREATE CUSTOMER ACCOUNT</p>
+          <p class="h1 text-center">CREATE SHIPER ACCOUNT</p>
           <p class="h7 text-danger" id="error"></p>
           <div class="mb-3 row">
             <div class="col">
-              <label class="form-label">Full Name (*)</label>
-              <input
-                type="text"
-                class="form-control"
-                id="inputFullName"
-                minlength="10"
-                maxlength="20"
-              />
+              <label class="form-label">Distribution Hub (*)</label>
+              <select class="form-select" id="list_option"></select>
             </div>
             <div class="col">
-            <label class="form-label">User Name (*)</label>
+              <label class="form-label">User Name (*)</label>
               <input
                 type="text"
                 class="form-control"
@@ -38,28 +32,16 @@
           <div class="mb-3 row">
             <div class="col">
               <label class="form-label">Password (*)</label>
-              <input
-                type="password"
-                class="form-control"
-                id="inputPassword"
-              />
+              <input type="password" class="form-control" id="inputPassword" />
             </div>
             <div class="col">
-            <label class="form-label">Confirm Password (*)</label>
+              <label class="form-label">Confirm Password (*)</label>
               <input
                 type="password"
                 class="form-control"
                 id="inputPasswordConfrim"
               />
             </div>
-          </div>
-          <div class="mb-3">
-            <label class="form-label">Address</label>
-            <input
-              type="text"
-              class="form-control"
-              id="inputAddress"
-            />
           </div>
           <div class="mb-3">
             <label class="form-label">Profile Image</label>
@@ -81,9 +63,8 @@
         </div>
       </div>
     </div>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
     <script src="../../constant/apiServices.js"></script>
-    <script src="../../css/bootstrap.bundle.min.js"></script>
-    <script src="../../js/createCustomerAccount.js"></script>
-
+    <script src="../../js/createShipperAccount.js"></script>
   </body>
 </html>

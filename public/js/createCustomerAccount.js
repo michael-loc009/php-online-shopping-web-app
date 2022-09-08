@@ -1,11 +1,11 @@
 function createAccount(e) {
   const host = "https://php-online-shopping-backend.herokuapp.com/api/";
-  var pattern = /^[a-zA-Z0-9_ ]{5,}$/i;
+  var pattern = /^[A-Za-z ]{5,}$/i;
   var patternAddress = /^[a-zA-Z0-9_ ]{5,}$/i;
   var patternUsern = /^[a-zA-Z0-9_]{8,15}$/i;
   var patternPwd =
     /^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*])([a-zA-Z0-9!@#$%^&*]{8,})$/;
-  let name = document.getElementById("inputBusinessName").value;
+  let name = document.getElementById("inputFullName").value;
   let username = document.getElementById("inputUsername").value;
   let pw = document.getElementById("inputPassword").value;
   let pwConfirm = document.getElementById("inputPasswordConfrim").value;
@@ -14,13 +14,13 @@ function createAccount(e) {
   let status = true;
   let error = "";
 
-  if (!pattern.test(removeDuplicateSpace(name))) {
+  if (!pattern.test(name)) {
     status = false;
-    error += `Name at least 5 characters and without special characters<br>`;
-    let element = document.getElementById("inputBusinessName");
+    error += `Name at least 5 characters without special characters<br>`;
+    let element = document.getElementById("inputFullName");
     element.classList.add("border-danger");
   } else {
-    let element = document.getElementById("inputBusinessName");
+    let element = document.getElementById("inputFullName");
     element.classList.remove("border-danger");
   }
 
@@ -63,18 +63,9 @@ function createAccount(e) {
     let element = document.getElementById("inputAddress");
     element.classList.add("border-danger");
     status = false;
-    error += `Adress less than 5 characters and without special charactor`;
+    error += `Adress less than 5 characters`;
   } else {
     let element = document.getElementById("inputAddress");
-    element.classList.remove("border-danger");
-  }
-
-  if (!file.files[0]) {
-    let element = document.getElementById("inputGetFile");
-    error += `Image is required`;
-    element.classList.add("border-danger");
-  } else {
-    let element = document.getElementById("inputGetFile");
     element.classList.remove("border-danger");
   }
 
@@ -82,7 +73,7 @@ function createAccount(e) {
     document.getElementById("error").innerHTML = error;
   } else {
     try {
-      var xhr = createCORSRequest("post", `${host}vendor`);
+      var xhr = createCORSRequest("post", `${host}product`);
       xhr.addEventListener(
         "progress",
         function (e) {
@@ -114,24 +105,26 @@ function createAccount(e) {
         if (4 == this.readyState) {
           console.log(["xhr upload complete----", this.responseText]);
           const res = JSON.parse(this.responseText);
-          if (res.code === 13) {
+          if (res.code === 9) {
             document.getElementById("error").innerHTML = res.message;
           }
           if (res.status) {
             document.getElementById("error").innerHTML = "";
-            window.location.replace(`http://${window.location.host}/vendors/login`);
+            alert("Create success");
           }
         }
       };
+      xhr.open("POST", `${host}customer`, true);
       var formData = new FormData();
       formData.append("Username", username);
       formData.append("Password", pw);
-      formData.append("BusinessName", name);
-      formData.append("BusinessAddress", address);
-      formData.append("ProfilePhoto", file.files[0]);
+      formData.append("Name", name);
+      formData.append("Address", address);
+      if (file.files[0]) {
+        formData.append("ProfilePhoto", file.files[0]);
+      }
       xhr.send(formData);
     } catch (error) {
-      console.log(error.message);
     }
   }
 }

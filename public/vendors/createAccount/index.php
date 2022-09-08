@@ -11,15 +11,15 @@
     <div class="container">
       <div class="container">
         <div class="container border px-3 py-3">
-          <p class="h1 text-center">CREATE CUSTOMER ACCOUNT</p>
+          <p class="h1 text-center">CREATE VENDOR ACCOUNT</p>
           <p class="h7 text-danger" id="error"></p>
           <div class="mb-3 row">
             <div class="col">
-              <label class="form-label">Full Name (*)</label>
+              <label class="form-label">Business Name (*)</label>
               <input
                 type="text"
                 class="form-control"
-                id="inputFullName"
+                id="inputBusinessName"
                 minlength="10"
                 maxlength="20"
               />
@@ -54,7 +54,7 @@
             </div>
           </div>
           <div class="mb-3">
-            <label class="form-label">Address</label>
+            <label class="form-label">Business Address (*)</label>
             <input
               type="text"
               class="form-control"
@@ -62,7 +62,7 @@
             />
           </div>
           <div class="mb-3">
-            <label class="form-label">Profile Image</label>
+            <label class="form-label">Profile Image (*)</label>
             <input
               type="file"
               class="form-control"
@@ -81,9 +81,8 @@
         </div>
       </div>
     </div>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
     <script src="../../constant/apiServices.js"></script>
-    <script src="../../css/bootstrap.bundle.min.js"></script>
-    <script src="../../js/createCustomerAccount.js"></script>
-
+    <script src="../../js/createVendorAccount.js"></script>
   </body>
 </html>

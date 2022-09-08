@@ -1,24 +1,24 @@
-const host = "http://php-online-shopping-backend.herokuapp.com/api/";
 const maxItemPerPage = 2;
 let currentPage = 1;
 let vendors = [];
 
-const openSection = (evt, sectionName) => {
+const openSection = (evt, sectionName, isFirstInit = false) => {
   var i, tabcontent, tablinks;
 
   tabcontent = document.getElementsByClassName("tabcontent");
   for (i = 0; i < tabcontent.length; i++) {
     tabcontent[i].style.display = "none";
   }
-
-  tablinks = document.getElementsByClassName("tablinks");
-  console.log(tablinks);
-  for (i = 0; i < tablinks.length; i++) {
-    tablinks[i].className = tablinks[i].className.replace("active", "");
-  }
-
   document.getElementById(sectionName).style.display = "block";
-  evt.currentTarget.className += " active";
+
+  if (!isFirstInit) {
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].className = tablinks[i].className.replace("active", "");
+    }
+
+    evt.currentTarget.className += " active";
+  }
 };
 
 function prevPage() {
@@ -81,7 +81,7 @@ function renderItem(item, index) {
     </div>
       <p class="card-text">Description: ${Description}</p>
       <div class="d-flex justify-content-between align-items-center">
-        <small class="text-muted">Last updated:9 mins</small>
+        <small class="text-muted">Last updated:${getFromDate(UpdatedAt)}</small>
       </div>
     </div>
   </div>
@@ -158,6 +158,7 @@ async function index() {
       if (Array.isArray(response)) {
         vendors = response;
         renderList(vendors);
+        openSection(null, "products", true);
         // changePage(1);
         renderPagination(response);
       }
