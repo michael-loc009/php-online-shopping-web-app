@@ -30,7 +30,7 @@ $shopDb = (new DatabaseConnector())->getShopDbConnection();
 $accountDb = (new DatabaseConnector())->getAccountDbConnection();
 
 header("Access-Control-Allow-Origin: *");
-header("Access-Control-Allow-Methods: OPTIONS,GET,POST,PUT,DELETE");
+header("Access-Control-Allow-Methods: PUT,OPTIONS,GET,POST,DELETE");
 header("Access-Control-Allow-Headers: Origin, Accept, Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With, X-Auth-Token");
 header("Content-Type: application/json; charset=UTF-8");
 header("Access-Control-Max-Age: 3600");
