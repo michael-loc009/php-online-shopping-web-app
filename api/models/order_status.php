@@ -21,7 +21,7 @@ class OrderStatus
             while($row =  $result->fetch(\PDO::FETCH_ASSOC) ) {
                 
                 $orderStatus = array(
-                    "OrderStatusID" => $row["OrderStatusID"] ,
+                    "OrderStatusID" => (int) $row["OrderStatusID"] ,
                     "Label" => $row["Label"],
                 );
                 $orderStatusList[] = $orderStatus;
@@ -31,8 +31,6 @@ class OrderStatus
         } catch (Exception $e) {
             echo 'Database exception: ' . $e->getMessage();
             exit($e->getMessage());
-        } finally{
-            // $this->db->close();
-        }
+        } 
     }
 }
